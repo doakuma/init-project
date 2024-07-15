@@ -39,6 +39,11 @@ const items = [
     name: "",
     placeholder: "",
   },
+  {
+    label: "",
+    name: "",
+    placeholder: "",
+  },
 ];
 
 const todoList = [
