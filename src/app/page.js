@@ -1,95 +1,103 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import CustomLayout from "@/components/CustomLayout";
+import { Divider, Typography } from "@mui/material";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <CustomLayout>
+      {todoList.map((item, idx) => {
+        return (
+          <Fragment key={idx}>
+            {idx > 0 && <Divider />}
+            <Typography variant="h4">{item.label}</Typography>
+            <List>
+              {item.lists.map((list, idx2) => {
+                return (
+                  <ListItem key={idx2}>
+                    <ListItemText primary={list.label} />
+                  </ListItem>
+                );
+              })}
+            </List>
+          </Fragment>
+        );
+      })}
+    </CustomLayout>
   );
 }
+
+const items = [
+  {
+    label: "",
+    name: "",
+    placeholder: "",
+  },
+];
+
+const todoList = [
+  {
+    label: "Basic",
+    lists: [
+      {
+        label: "CustomButton",
+        isDone: false,
+      },
+      {
+        label: "CustomText",
+        isDone: false,
+      },
+      {
+        label: "CustomIcon",
+        isDone: false,
+      },
+      {
+        label: "CustomChip",
+        isDone: false,
+      },
+      {
+        label: "CustomBadge",
+        isDone: false,
+      },
+      {
+        label: "CustomModal",
+        isDone: false,
+      },
+      {
+        label: "CustomDatagrid",
+        isDone: false,
+      },
+    ],
+  },
+  {
+    label: "Forms",
+    lists: [
+      {
+        label: "CustomInput",
+        isDone: false,
+      },
+      {
+        label: "CustomRadio",
+        isDone: false,
+      },
+      {
+        label: "CustomCheckbox",
+        isDone: false,
+      },
+      {
+        label: "CustomSelect",
+        isDone: false,
+      },
+      {
+        label: "CustomDatepicker",
+        isDone: false,
+      },
+    ],
+  },
+];
