@@ -1,15 +1,19 @@
-import { Fragment } from "react";
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { Fragment, useState } from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import CustomLayout from "@/components/CustomLayout";
 import { Divider, Typography } from "@mui/material";
+import { isUndefined } from "lodash";
+import { CustomButton } from "@/components";
+import { componentInfo } from "@/components/componentInfo";
 
 export default function Home() {
+  const [compType, setCompType] = useState("");
+  const handleClickList = (type) => {
+    setCompType(type.toLowerCase());
+  };
   return (
     <CustomLayout>
       {todoList.map((item, idx) => {
@@ -20,7 +24,10 @@ export default function Home() {
             <List>
               {item.lists.map((list, idx2) => {
                 return (
-                  <ListItem key={idx2}>
+                  <ListItem
+                    key={idx2}
+                    onClick={() => handleClickList(list.label)}
+                  >
                     <ListItemText primary={list.label} />
                   </ListItem>
                 );
@@ -29,6 +36,17 @@ export default function Home() {
           </Fragment>
         );
       })}
+      {!isUndefined(componentInfo[compType]) && (
+        <div className="da-content">
+          {componentInfo[compType].map((item, idx) => {
+            return (
+              <CustomButton key={idx} {...item}>
+                Button
+              </CustomButton>
+            );
+          })}
+        </div>
+      )}
     </CustomLayout>
   );
 }
