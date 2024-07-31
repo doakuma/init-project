@@ -1,13 +1,18 @@
 "use client";
 import { Fragment, useState } from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import CustomLayout from "@/components/CustomLayout";
+import { List, ListItem, ListItemText, ListItemButton } from "@mui/material";
 import { Divider, Typography } from "@mui/material";
-import { isUndefined } from "lodash";
-import { CustomButton } from "@/components";
-import { componentInfo } from "@/components/componentInfo";
+import { isEmpty, isUndefined } from "lodash";
+import CustomLayout from "@/components/CustomLayout";
+import {
+  componentInfo,
+  componentList,
+  componentProps,
+} from "@/components/componentInfo";
+import {
+  ComponentRender,
+  ComponentInfoRender,
+} from "@/components/utils/ComponentRender";
 
 export default function Home() {
   const [compType, setCompType] = useState("");
@@ -16,111 +21,77 @@ export default function Home() {
   };
   return (
     <CustomLayout>
-      {todoList.map((item, idx) => {
-        return (
-          <Fragment key={idx}>
-            {idx > 0 && <Divider />}
-            <Typography variant="h4">{item.label}</Typography>
-            <List>
-              {item.lists.map((list, idx2) => {
-                return (
-                  <ListItem
-                    key={idx2}
-                    onClick={() => handleClickList(list.label)}
-                  >
-                    <ListItemText primary={list.label} />
-                  </ListItem>
-                );
-              })}
-            </List>
-          </Fragment>
-        );
-      })}
-      {!isUndefined(componentInfo[compType]) && (
-        <div className="da-content">
-          {componentInfo[compType].map((item, idx) => {
+      <div className="da-components">
+        <div className="da-components-list">
+          {componentList.map((item, idx) => {
             return (
-              <CustomButton key={idx} {...item}>
-                Button
-              </CustomButton>
+              <Fragment key={idx}>
+                {idx > 0 && <Divider />}
+                <Typography variant="h4">{item.label}</Typography>
+                <List>
+                  {item.lists.map((list, idx2) => {
+                    return (
+                      <ListItemButton
+                        key={idx2}
+                        onClick={() => handleClickList(list.label)}
+                      >
+                        <ListItemText primary={list.label} />
+                      </ListItemButton>
+                    );
+                  })}
+                </List>
+              </Fragment>
             );
           })}
         </div>
-      )}
+        <div className="da-components-content">
+          <Typography variant="h4">{compType.toUpperCase()}</Typography>
+          {!isUndefined(componentInfo[compType]) && (
+            <div className="da-components-example">
+              {componentInfo[compType].map((item, idx) => {
+                return (
+                  <div className="da-components-item" key={idx}>
+                    {item.map((component, idx2) => {
+                      return (
+                        <div className="da-components-cell" key={idx2}>
+                          <div className="da-components-render">
+                            {ComponentRender(component, compType)}
+                          </div>
+                          {ComponentInfoRender(component, compType)}
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+          <div className="da-components-props">
+            {!isEmpty(compType) && (
+              <>
+                <Typography variant="h5">Props</Typography>
+                {componentProps[compType]?.map((item, idx) => {
+                  return (
+                    <>
+                      <dl className="da-components-props-list" key={idx}>
+                        <dt
+                          className={item.name.includes("?") ? "" : "required"}
+                        >
+                          {item.name}:
+                        </dt>
+                        <dd className="type">{item.type}</dd>
+                        {item.explain && (
+                          <dd className="explain">{item.explain}</dd>
+                        )}
+                      </dl>
+                    </>
+                  );
+                })}
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     </CustomLayout>
   );
 }
-
-const items = [
-  {
-    label: "",
-    name: "",
-    placeholder: "",
-  },
-  {
-    label: "",
-    name: "",
-    placeholder: "",
-  },
-];
-
-const todoList = [
-  {
-    label: "Basic",
-    lists: [
-      {
-        label: "CustomButton",
-        isDone: false,
-      },
-      {
-        label: "CustomText",
-        isDone: false,
-      },
-      {
-        label: "CustomIcon",
-        isDone: false,
-      },
-      {
-        label: "CustomChip",
-        isDone: false,
-      },
-      {
-        label: "CustomBadge",
-        isDone: false,
-      },
-      {
-        label: "CustomModal",
-        isDone: false,
-      },
-      {
-        label: "CustomDatagrid",
-        isDone: false,
-      },
-    ],
-  },
-  {
-    label: "Forms",
-    lists: [
-      {
-        label: "CustomInput",
-        isDone: false,
-      },
-      {
-        label: "CustomRadio",
-        isDone: false,
-      },
-      {
-        label: "CustomCheckbox",
-        isDone: false,
-      },
-      {
-        label: "CustomSelect",
-        isDone: false,
-      },
-      {
-        label: "CustomDatepicker",
-        isDone: false,
-      },
-    ],
-  },
-];

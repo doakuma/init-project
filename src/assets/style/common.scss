@@ -1,0 +1,105 @@
+@import "./variable.scss";
+.da {
+  &-wrapper {
+    overflow: hidden;
+    min-width: 1366px;
+  }
+  // component example list style
+  &-components {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: stretch;
+    &-list {
+      padding: 16px;
+    }
+    &-content {
+      padding: 20px;
+    }
+    &-example {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+      padding: 16px;
+      margin-block: 8px;
+      border: 1px solid #000;
+      border-radius: 8px;
+    }
+    &-item {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-top: 1px solid #000;
+      &:first-of-type {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+    &-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex: 1;
+    }
+    &-render {
+      flex: 1;
+    }
+    &-source {
+      flex: 1;
+      width: 100%;
+      --sourceSize: 14;
+      --sourceLine: 1.6;
+      --sourceHeight: calc(var(--sourceSize) * var(--sourceLine));
+      border-radius: 0.25rem;
+      /* padding: 0.5rem; */
+      line-height: var(--sourceLine);
+      font-size: calc(var(--sourceSize) * 0.0625rem);
+      border: 0.0625rem solid var(--k-grey-900);
+      background: repeating-linear-gradient(
+        to bottom,
+        #fff,
+        #fff calc(var(--sourceHeight) * 0.0625rem),
+        var(--k-grey-50) calc(var(--sourceHeight) * 0.0625rem),
+        var(--k-grey-50) calc(var(--sourceHeight) * 0.125rem)
+      );
+    }
+    &-props {
+      margin: 16px 0 0;
+      &-list {
+        padding: 0.5rem 0.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--k-grey-50);
+        font-size: 0.875rem;
+        border-radius: 0.125rem;
+        dt {
+          font-weight: 600;
+          &.required {
+            color: var(--k-error);
+          }
+        }
+        &:nth-child(even) {
+          background: transparent;
+        }
+        dd {
+          &.explain {
+            color: var(--k-info);
+          }
+          &.type {
+            padding: 0.25rem;
+            background: var(--k-grey-300);
+            color: var(--k-grey-900);
+            border-radius: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}

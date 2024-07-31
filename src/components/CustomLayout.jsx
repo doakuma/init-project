@@ -9,7 +9,7 @@ const CustomLayout = (props) => {
   const { children, maxWidth = "xl" } = props;
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <Container maxWidth={false} disableGutters>
+    <Container maxWidth={false} disableGutters className="da-wrapper">
       <CustomHeader handleMenuClick={() => setMenuOpen(true)} />
       <CustomMenu
         open={menuOpen}
