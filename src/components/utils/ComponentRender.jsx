@@ -1,11 +1,19 @@
 import React from "react";
-import { CustomButton, CustomInput } from "@/components";
+import {
+  CustomButton,
+  CustomInput,
+  CustomRadio,
+  CustomCheckbox,
+} from "@/components";
 
 export const ComponentRender = (item, type) => {
   switch (type) {
     case "custominput":
-      // return <>CustomInput</>;
       return <CustomInput {...item} />;
+    case "customradio":
+      return <CustomRadio {...item} />;
+    case "customcheckbox":
+      return <CustomCheckbox {...item} />;
     case "custombutton":
       return <CustomButton {...item} />;
     default:

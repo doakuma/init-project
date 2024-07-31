@@ -4,7 +4,7 @@ const componentList = [
     lists: [
       {
         label: "CustomButton",
-        isDone: false,
+        isDone: true,
         type: "custombutton",
       },
       {
@@ -32,6 +32,11 @@ const componentList = [
         isDone: false,
         type: "customdatagrid",
       },
+      {
+        label: "CustomTable",
+        isDone: false,
+        type: "customtable",
+      },
     ],
   },
   {
@@ -39,17 +44,17 @@ const componentList = [
     lists: [
       {
         label: "CustomInput",
-        isDone: false,
+        isDone: true,
         type: "custominput",
       },
       {
         label: "CustomRadio",
-        isDone: false,
+        isDone: true,
         type: "customradio",
       },
       {
         label: "CustomCheckbox",
-        isDone: false,
+        isDone: true,
         type: "customcheckbox",
       },
       {
@@ -61,6 +66,11 @@ const componentList = [
         label: "CustomDatepicker",
         isDone: false,
         type: "customdatepicker",
+      },
+      {
+        label: "CustomTimepicker",
+        isDone: false,
+        type: "customtimepicker",
       },
     ],
   },
@@ -234,6 +244,57 @@ const componentInfo = {
       },
     ],
   ],
+  customradio: [
+    [
+      {
+        name: "radio",
+        value: "",
+        handleChange: "",
+        defaultValue: "female",
+        row: true,
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+    ],
+  ],
+  customcheckbox: [
+    [
+      {
+        handleChange: "",
+        defaultValue: "female",
+        row: true,
+        options: [
+          {
+            label: "Female",
+            value: "female",
+            name: "checkbox",
+          },
+          {
+            label: "Male",
+            value: "male",
+            name: "checkbox",
+          },
+          {
+            label: "Other",
+            value: "other",
+            name: "checkbox",
+          },
+        ],
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -303,6 +364,60 @@ const componentProps = {
     {
       name: "helperText?",
       type: "node",
+      explain: "",
+    },
+  ],
+  customradio: [
+    {
+      name: "name",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "value",
+      type: "any",
+      explain: "",
+    },
+    {
+      name: "handleChange",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "options",
+      type: "{ label: string, value: any }[]",
+      explain: "",
+    },
+    {
+      name: "defaultValue?",
+      type: "any",
+      explain: "",
+    },
+    {
+      name: "row?",
+      type: "boolean",
+      explain: "",
+    },
+  ],
+  customcheckbox: [
+    {
+      name: "handleChange",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "options",
+      type: "{ label: string, value: any, name: any }[]",
+      explain: "",
+    },
+    {
+      name: "defaultValue?",
+      type: "any",
+      explain: "",
+    },
+    {
+      name: "row?",
+      type: "boolean",
       explain: "",
     },
   ],

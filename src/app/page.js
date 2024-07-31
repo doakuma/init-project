@@ -1,7 +1,14 @@
 "use client";
 import { Fragment, useState } from "react";
-import { List, ListItem, ListItemText, ListItemButton } from "@mui/material";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemButton,
+  ListItemIcon,
+} from "@mui/material";
 import { Divider, Typography } from "@mui/material";
+import StarBorder from "@mui/icons-material/StarBorder";
 import { isEmpty, isUndefined } from "lodash";
 import CustomLayout from "@/components/CustomLayout";
 import {
@@ -27,14 +34,20 @@ export default function Home() {
             return (
               <Fragment key={idx}>
                 {idx > 0 && <Divider />}
-                <Typography variant="h4">{item.label}</Typography>
+                <Typography variant="h4" sx={{ my: 2 }}>
+                  {item.label}
+                </Typography>
                 <List>
                   {item.lists.map((list, idx2) => {
                     return (
                       <ListItemButton
                         key={idx2}
                         onClick={() => handleClickList(list.label)}
+                        selected={compType === list.label.toLocaleLowerCase()}
                       >
+                        <ListItemIcon>
+                          {list.isDone && <StarBorder color="primary" />}
+                        </ListItemIcon>
                         <ListItemText primary={list.label} />
                       </ListItemButton>
                     );
