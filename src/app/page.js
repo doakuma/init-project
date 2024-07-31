@@ -45,10 +45,10 @@ export default function Home() {
                         onClick={() => handleClickList(list.label)}
                         selected={compType === list.label.toLocaleLowerCase()}
                       >
+                        <ListItemText primary={list.label} />
                         <ListItemIcon>
                           {list.isDone && <StarBorder color="primary" />}
                         </ListItemIcon>
-                        <ListItemText primary={list.label} />
                       </ListItemButton>
                     );
                   })}
