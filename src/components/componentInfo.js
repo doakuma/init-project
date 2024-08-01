@@ -59,7 +59,7 @@ const componentList = [
       },
       {
         label: "CustomSelect",
-        isDone: false,
+        isDone: true,
         type: "customselect",
       },
       {
@@ -295,6 +295,201 @@ const componentInfo = {
       },
     ],
   ],
+  customselect: [
+    [
+      {
+        labelId: "select-label",
+        label: "label",
+        id: "select",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: false,
+        disabled: false,
+        error: false,
+        required: false,
+        size: "",
+        helperText: "",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+      {
+        labelId: "select-label-small",
+        label: "label-small",
+        id: "select-small",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: false,
+        disabled: false,
+        error: false,
+        required: false,
+        size: "small",
+        helperText: "",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+      {
+        labelId: "select-label-large",
+        label: "label-large",
+        id: "select-large",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: false,
+        disabled: false,
+        error: false,
+        required: false,
+        size: "large",
+        helperText: "",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        labelId: "select-label-readOnly",
+        label: "label-readOnly",
+        id: "select-readOnly",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: true,
+        disabled: false,
+        error: false,
+        required: false,
+        size: "",
+        helperText: "readOnly",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+      {
+        labelId: "select-label-disabled",
+        label: "label-disabled",
+        id: "select-disabled",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: false,
+        disabled: true,
+        error: false,
+        required: false,
+        size: "",
+        helperText: "disabled",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+      {
+        labelId: "select-label-error",
+        label: "label-error",
+        id: "select-error",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: false,
+        disabled: false,
+        error: true,
+        required: false,
+        size: "",
+        helperText: "error",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+      {
+        labelId: "select-label-required",
+        label: "label-required",
+        id: "select-required",
+        handleChange: "",
+        defaultValue: "female",
+        readOnly: false,
+        disabled: false,
+        error: false,
+        required: true,
+        size: "",
+        helperText: "required",
+        options: [
+          {
+            label: "Female",
+            value: "female",
+          },
+          {
+            label: "Male",
+            value: "male",
+          },
+          {
+            label: "Other",
+            value: "other",
+          },
+        ],
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -418,6 +613,68 @@ const componentProps = {
     {
       name: "row?",
       type: "boolean",
+      explain: "",
+    },
+  ],
+  customselect: [
+    {
+      name: "id",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "value",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "handleChange",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "options",
+      type: "{ label: string, value: any}",
+      explain: "",
+    },
+    {
+      name: "labelId",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "label",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "readOnly?",
+      type: "boolean",
+      explain: "",
+    },
+    {
+      name: "disabled?",
+      type: "boolean",
+      explain: "",
+    },
+    {
+      name: "error?",
+      type: "boolean",
+      explain: "",
+    },
+    {
+      name: "required?",
+      type: "boolean",
+      explain: "",
+    },
+    {
+      name: "size?",
+      type: "small | medium | large",
+      explain: "",
+    },
+    {
+      name: "helperText?",
+      type: "node",
       explain: "",
     },
   ],

@@ -4,6 +4,7 @@ import {
   CustomInput,
   CustomRadio,
   CustomCheckbox,
+  CustomSelect,
 } from "@/components";
 
 export const ComponentRender = (item, type) => {
@@ -14,6 +15,8 @@ export const ComponentRender = (item, type) => {
       return <CustomRadio {...item} />;
     case "customcheckbox":
       return <CustomCheckbox {...item} />;
+    case "customselect":
+      return <CustomSelect {...item} />;
     case "custombutton":
       return <CustomButton {...item} />;
     default:

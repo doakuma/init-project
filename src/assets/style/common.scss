@@ -48,14 +48,16 @@
       flex: 1;
     }
     &-render {
-      flex: 1;
+      width: 100%;
     }
     &-source {
-      flex: 1;
-      width: 100%;
       --sourceSize: 14;
       --sourceLine: 1.6;
       --sourceHeight: calc(var(--sourceSize) * var(--sourceLine));
+      overflow: hidden;
+      overflow-y: auto;
+      width: 100%;
+      max-height: 160px;
       border-radius: 0.25rem;
       /* padding: 0.5rem; */
       line-height: var(--sourceLine);
