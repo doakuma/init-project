@@ -19,6 +19,7 @@ import {
 import {
   ComponentRender,
   ComponentInfoRender,
+  ComponentPropsRender,
 } from "@/components/utils/ComponentRender";
 
 export default function Home() {
@@ -80,26 +81,17 @@ export default function Home() {
             </div>
           )}
           <div className="da-components-props">
+            {/* {!isEmpty(compType) && (
+              <>
+                <Typography variant="h5">Props</Typography>
+                {ComponentPropsRender(componentProps[compType])}
+                )}
+              </>
+            )} */}
             {!isEmpty(compType) && (
               <>
                 <Typography variant="h5">Props</Typography>
-                {componentProps[compType]?.map((item, idx) => {
-                  return (
-                    <>
-                      <dl className="da-components-props-list" key={idx}>
-                        <dt
-                          className={item.name.includes("?") ? "" : "required"}
-                        >
-                          {item.name}:
-                        </dt>
-                        <dd className="type">{item.type}</dd>
-                        {item.explain && (
-                          <dd className="explain">{item.explain}</dd>
-                        )}
-                      </dl>
-                    </>
-                  );
-                })}
+                {ComponentPropsRender(componentProps[compType])}
               </>
             )}
           </div>
