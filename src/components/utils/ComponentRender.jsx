@@ -6,6 +6,7 @@ import {
   CustomCheckbox,
   CustomSelect,
   CustomSwitch,
+  CustomTable,
 } from "@/components";
 
 export const ComponentRender = (item, type) => {
@@ -22,6 +23,8 @@ export const ComponentRender = (item, type) => {
       return <CustomSelect {...item} />;
     case "customswitch":
       return <CustomSwitch {...item} />;
+    case "customtable":
+      return <CustomTable {...item} />;
     default:
       break;
   }

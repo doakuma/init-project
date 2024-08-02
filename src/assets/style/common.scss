@@ -4,6 +4,43 @@
     overflow: hidden;
     min-width: 1366px;
   }
+  &-table {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      table {
+        width: 100%;
+        border-top: 2px solid #000;
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 8px 12px;
+        font-weight: 400;
+        text-align: left;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: #000;
+      }
+      th {
+        background-color: #eee;
+      }
+      thead {
+        th {
+          text-align: center;
+          font-weight: 600;
+        }
+      }
+      tbody {
+        td {
+          text-align: center;
+        }
+      }
+    }
+  }
   // component example list style
   &-components {
     width: 100%;

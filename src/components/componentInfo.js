@@ -34,7 +34,7 @@ const componentList = [
       },
       {
         label: "CustomTable",
-        isDone: false,
+        isDone: true,
         type: "customtable",
       },
     ],
@@ -645,6 +645,87 @@ const componentInfo = {
       },
     ],
   ],
+  customtable: [
+    [
+      {
+        colsInfo: [20, 30, 20, 30],
+        columns: [
+          [
+            {
+              label: "label1",
+              name: "name1",
+              colspan: 3,
+            },
+          ],
+          [
+            {
+              label: "label3",
+              name: "name3",
+            },
+            {
+              label: "label4",
+              name: "name4",
+            },
+          ],
+        ],
+        tableData: {
+          name1: "value1",
+          name2: "value2",
+          name3: "value3",
+          name4: "value4",
+        },
+        isVertical: false,
+      },
+      {
+        colsInfo: [25, 25, 25, 25],
+        columns: [
+          {
+            label: "label1",
+            name: "name1",
+          },
+          {
+            label: "label2",
+            name: "name3",
+          },
+          {
+            label: "label3",
+            name: "name3",
+          },
+          {
+            label: "label4",
+            name: "name4",
+          },
+        ],
+        tableData: [
+          {
+            name1: "value11",
+            name2: "value12",
+            name3: "value13",
+            name4: "value14",
+          },
+          {
+            name1: "value21",
+            name2: "value22",
+            name3: "value23",
+            name4: "value24",
+          },
+          {
+            name1: "value31",
+            name2: "value32",
+            name3: "value33",
+            name4: "value34",
+          },
+          {
+            name1: "value41",
+            name2: "value42",
+            name3: "value43",
+            name4: "value44",
+          },
+        ],
+        isVertical: true,
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -848,6 +929,28 @@ const componentProps = {
       name: "options",
       type: `{ \n  label: string, \n  value: any, \n  name: string, \n  disabled?: boolean, \n  required?: boolean, \n  readOnly?: boolean, \n  size?: small | medium, \n  color?: string, \n}`,
       explain: "",
+    },
+  ],
+  customtable: [
+    {
+      name: "columns",
+      type: `{ \n  label: string, \n  name: string \n}`,
+      explain: "",
+    },
+    {
+      name: "colsInfo",
+      type: "number[]",
+      explain: "",
+    },
+    {
+      name: "tableData",
+      type: "object[]",
+      explain: "",
+    },
+    {
+      name: "isVertical",
+      type: "boolean",
+      explain: "vertical mode 사용 유무 | default false",
     },
   ],
 };
