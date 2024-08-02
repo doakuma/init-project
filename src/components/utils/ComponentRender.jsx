@@ -7,7 +7,9 @@ import {
   CustomSelect,
   CustomSwitch,
   CustomTable,
+  CustomModal,
 } from "@/components";
+import { useModal } from "./modalUtils";
 
 export const ComponentRender = (item, type) => {
   switch (type) {
@@ -25,17 +27,22 @@ export const ComponentRender = (item, type) => {
       return <CustomSwitch {...item} />;
     case "customtable":
       return <CustomTable {...item} />;
+    case "custommodal":
+      return <ModalRender {...item} />;
     default:
-      break;
+      return null;
   }
 };
+
 export const ComponentInfoRender = (data, type) => {
+  console.debug("data", data, data.children && typeof data.children);
   return (
     <div className="da-components-source">
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
+
 export const ComponentPropsRender = (data) => {
   const typeRender = (type) => {
     if (type.includes("{")) {
@@ -44,22 +51,32 @@ export const ComponentPropsRender = (data) => {
       return type;
     }
   };
+
   return (
     <>
-      {data?.map((item, idx) => {
-        return (
-          <>
-            <dl className="da-components-props-list" key={idx}>
-              <dt className={item.name.includes("?") ? "" : "required"}>
-                {item.name}:
-              </dt>
-              <dd className="type">{typeRender(item.type)}</dd>
+      {data?.map((item, idx) => (
+        <dl className="da-components-props-list" key={idx}>
+          <dt className={item.name.includes("?") ? "" : "required"}>
+            {item.name}:
+          </dt>
+          <dd className="type">{typeRender(item.type)}</dd>
+          {item.explain && <dd className="explain">{item.explain}</dd>}
+        </dl>
+      ))}
+    </>
+  );
+};
 
-              {item.explain && <dd className="explain">{item.explain}</dd>}
-            </dl>
-          </>
-        );
-      })}
+const ModalRender = (item) => {
+  const modalProps = useModal();
+  return (
+    <>
+      <CustomButton label={item.title} onClick={modalProps.openModal} />
+      <CustomModal
+        open={modalProps.isOpen}
+        handleClose={modalProps.closeModal}
+        {...item}
+      />
     </>
   );
 };

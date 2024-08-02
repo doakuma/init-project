@@ -24,7 +24,7 @@ const componentList = [
       },
       {
         label: "CustomModal",
-        isDone: false,
+        isDone: true,
         type: "custommodal",
       },
       {
@@ -726,6 +726,65 @@ const componentInfo = {
       },
     ],
   ],
+  custommodal: [
+    [
+      {
+        title: "Default modal",
+        size: "lg",
+        children: (
+          <ul>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        ),
+      },
+      {
+        title: "Default modal sm",
+        size: "sm",
+        children: (
+          <ul>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        ),
+      },
+      {
+        title: "Default modal xl",
+        size: "xl",
+        children: (
+          <ul>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        ),
+      },
+    ],
+    [
+      {
+        title: "alert",
+        isAlert: true,
+        alertContent: {
+          type: "label",
+          label: "alert content alert content alert content alert content ",
+        },
+      },
+      {
+        title: "confirm",
+        isAlert: true,
+        alertContent: {
+          type: "label",
+          label:
+            "confirm content confirm content confirm content confirm content ",
+        },
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -951,6 +1010,53 @@ const componentProps = {
       name: "isVertical",
       type: "boolean",
       explain: "vertical mode 사용 유무 | default false",
+    },
+  ],
+  custommodal: [
+    {
+      name: "open",
+      type: "useModal",
+      explain: "",
+    },
+    {
+      name: "handleClose",
+      type: "useModal",
+      explain: "",
+    },
+    {
+      name: "handleConfirm",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "children",
+      type: "node",
+      explain: "",
+    },
+    {
+      name: "title",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "useAction?",
+      type: "boolean",
+      explain: "",
+    },
+    {
+      name: "size",
+      type: "sm | lg",
+      explain: "",
+    },
+    {
+      name: "isAlert",
+      type: "boolean",
+      explain: "alert / confirm일 때만 사용",
+    },
+    {
+      name: "alertContent",
+      type: `{ \n  label: string, \n  variant: string \n}`,
+      explain: "alert / confirm일 때만 사용",
     },
   ],
 };

@@ -2,13 +2,14 @@
 import React, { useState } from "react";
 import { ThemeProvider, Container, createTheme } from "@mui/material";
 
+import useTheme from "@/assets/theme";
 import CustomHeader from "./CustomHeader";
 import CustomMenu from "./CustomMenu";
 
 const CustomLayout = (props) => {
   const { children, maxWidth = "xl" } = props;
   const [menuOpen, setMenuOpen] = useState(false);
-  const theme = createTheme();
+  const { theme } = useTheme();
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={false} disableGutters className="da-wrapper">
