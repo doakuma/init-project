@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "../assets/style/common.scss";
 
 import { Container, CssBaseline } from "@mui/material";
 
