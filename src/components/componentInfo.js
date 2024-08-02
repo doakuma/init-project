@@ -37,6 +37,16 @@ const componentList = [
         isDone: true,
         type: "customtable",
       },
+      {
+        label: "CustomAccordion",
+        isDone: false,
+        type: "customaccordion",
+      },
+      {
+        label: "CustomTab",
+        isDone: false,
+        type: "customtab",
+      },
     ],
   },
   {
@@ -785,6 +795,84 @@ const componentInfo = {
       },
     ],
   ],
+  customchip: [
+    [
+      {
+        label: "contained",
+        variant: "contained",
+        // color: "",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+      {
+        label: "outlined",
+        variant: "outlined",
+        // color: "",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+    ],
+    [
+      {
+        label: "primary",
+        variant: "contained",
+        color: "primary",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+      {
+        label: "secondary",
+        variant: "contained",
+        color: "secondary",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+    ],
+    [
+      {
+        label: "clickable",
+        variant: "contained",
+        color: "primary",
+        handleClick: () => {
+          console.debug("clickable");
+        },
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+      {
+        label: "deletable",
+        variant: "contained",
+        color: "primary",
+        // handleClick: "",
+        handleDelete: () => {
+          console.debug("deletable");
+        },
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -1057,6 +1145,53 @@ const componentProps = {
       name: "alertContent",
       type: `{ \n  label: string, \n  variant: string \n}`,
       explain: "alert / confirm일 때만 사용",
+    },
+  ],
+  customchip: [
+    {
+      name: "label",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "variant?",
+      type: "contained | outlined",
+      explain: "",
+    },
+    {
+      name: "color?",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "handleClick?",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "handleDelete?",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "deleteIcon?",
+      type: "node",
+      explain: "",
+    },
+    {
+      name: "avatar?",
+      type: "node",
+      explain: "",
+    },
+    {
+      name: "icon?",
+      type: "node",
+      explain: "",
+    },
+    {
+      name: "size?",
+      type: "small | medium",
+      explain: "",
     },
   ],
 };

@@ -32,6 +32,15 @@ export default function Home() {
       <div className="da-components">
         <div className="da-components-list">
           {componentList.map((item, idx) => {
+            const sortedList = item.lists.sort((a, b) => {
+              if (a.label < b.label) {
+                return -1;
+              }
+              if (a.label > b.label) {
+                return 1;
+              }
+              return 0;
+            });
             return (
               <Fragment key={idx}>
                 {idx > 0 && <Divider />}
@@ -39,7 +48,8 @@ export default function Home() {
                   {item.label}
                 </Typography>
                 <List>
-                  {item.lists.map((list, idx2) => {
+                  {/* {console.debug(sortedList(item.lists))} */}
+                  {sortedList.map((list, idx2) => {
                     return (
                       <ListItemButton
                         key={idx2}

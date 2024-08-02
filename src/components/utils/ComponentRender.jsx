@@ -8,6 +8,7 @@ import {
   CustomSwitch,
   CustomTable,
   CustomModal,
+  CustomChip,
 } from "@/components";
 import { useModal } from "./modalUtils";
 
@@ -27,6 +28,8 @@ export const ComponentRender = (item, type) => {
       return <CustomSwitch {...item} />;
     case "customtable":
       return <CustomTable {...item} />;
+    case "customchip":
+      return <CustomChip {...item} />;
     case "custommodal":
       return <ModalRender {...item} />;
     default:

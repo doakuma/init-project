@@ -21,7 +21,7 @@ const CustomCheckbox = (props) => {
                 label={item.label}
                 control={
                   <Checkbox
-                    checked={item.value === defaultValue}
+                    defaultChecked={item.value === defaultValue}
                     onchange={handleChange}
                     name={item.name}
                   />
