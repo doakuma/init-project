@@ -18,7 +18,7 @@ const CustomMenu = (props) => {
         {menuInfo.map((text, index) => {
           return (
             <ListItem key={text.label} disablePadding>
-              <ListItemButton>
+              <ListItemButton href={text.path}>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>

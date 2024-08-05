@@ -5,6 +5,7 @@ import "../assets/style/common.scss";
 import { useEffect } from "react";
 import { Container, CssBaseline } from "@mui/material";
 import { RecoilRoot } from "recoil";
+import CustomLayout from "@/components/CustomLayout";
 
 // export const metadata = {
 //   title: "Create Next App",
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
       <body>
         <RecoilRoot>
           <CssBaseline />
-          {children}
+          <CustomLayout>{children}</CustomLayout>
         </RecoilRoot>
       </body>
     </html>

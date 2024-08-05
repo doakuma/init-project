@@ -1,5 +1,5 @@
-import { Chip } from "@mui/material";
 import React from "react";
+import { Chip, Avatar } from "@mui/material";
 
 const CustomChip = (props) => {
   const {
@@ -24,6 +24,7 @@ const CustomChip = (props) => {
       avatar={avatar}
       icon={icon}
       size={size}
+      avatar={avatar && <Avatar src={avatar.src} alt={avatar.alt} />}
     />
   );
 };

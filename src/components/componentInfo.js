@@ -819,6 +819,28 @@ const componentInfo = {
         // icon: "",
         // size: "",
       },
+      {
+        label: "contained",
+        variant: "outlined",
+        // color: "",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+      {
+        label: "outlined",
+        variant: "outlined",
+        // color: "",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
     ],
     [
       {

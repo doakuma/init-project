@@ -10,6 +10,7 @@ const CustomLayout = (props) => {
   const { children, maxWidth = "xl" } = props;
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useTheme();
+  console.debug("theme", theme);
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={false} disableGutters className="da-wrapper">
@@ -29,8 +30,8 @@ export default CustomLayout;
 
 const menuinfo = [
   {
-    label: "Inbox",
-    path: "/",
+    label: "componentguide",
+    path: "/componentGuide",
   },
   {
     label: "Starred",
