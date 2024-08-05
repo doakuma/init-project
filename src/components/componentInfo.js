@@ -923,6 +923,84 @@ const componentInfo = {
       },
     ],
   ],
+  customtab: [
+    [
+      {
+        tabValue: 0,
+        handleChange: "",
+        tabInfo: [
+          {
+            label: "Tab01",
+            value: 0,
+            disabled: false,
+          },
+          {
+            label: "Tab02",
+            value: 1,
+            disabled: false,
+          },
+          {
+            label: "Tab03",
+            value: 2,
+            disabled: false,
+          },
+        ],
+        tabColor: "",
+        tabCentered: "",
+        tabOrientation: "",
+      },
+      {
+        tabValue: 0,
+        handleChange: "",
+        tabInfo: [
+          {
+            label: "Tab01",
+            value: 0,
+            disabled: false,
+          },
+          {
+            label: "Tab02",
+            value: 1,
+            disabled: true,
+          },
+          {
+            label: "Tab03",
+            value: 2,
+            disabled: false,
+          },
+        ],
+        tabColor: "",
+        tabCentered: "",
+        tabOrientation: "",
+      },
+    ],
+    [
+      {
+        tabValue: 0,
+        handleChange: "",
+        tabInfo: [
+          {
+            label: "Tab01",
+            value: 0,
+            disabled: false,
+          },
+          {
+            label: "Tab02",
+            value: 1,
+            disabled: false,
+          },
+          {
+            label: "Tab03",
+            value: 2,
+            disabled: false,
+          },
+        ],
+        tabColor: "",
+        tabCentered: "",
+        tabOrientation: "vertical",
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [

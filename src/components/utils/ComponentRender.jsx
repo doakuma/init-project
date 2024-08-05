@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CustomButton,
   CustomInput,
@@ -9,6 +9,7 @@ import {
   CustomTable,
   CustomModal,
   CustomChip,
+  CustomTab,
 } from "@/components";
 import { useModal } from "./modalUtils";
 
@@ -30,6 +31,8 @@ export const ComponentRender = (item, type) => {
       return <CustomTable {...item} />;
     case "customchip":
       return <CustomChip {...item} />;
+    case "customtab":
+      return <TabsRender {...item} />;
     case "custommodal":
       return <ModalRender {...item} />;
     default:
@@ -66,6 +69,16 @@ export const ComponentPropsRender = (data) => {
         </dl>
       ))}
     </>
+  );
+};
+const TabsRender = (item) => {
+  const [tabsValue, setTabsValue] = useState(0);
+  const handleChangeTab = (event, newValue) => {
+    console.debug("newValue", newValue);
+    setTabsValue(newValue);
+  };
+  return (
+    <CustomTab {...item} tabValue={tabsValue} handleChange={handleChangeTab} />
   );
 };
 

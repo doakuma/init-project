@@ -115,6 +115,40 @@ const useTheme = () => {
           },
         },
       },
+      MuiTab: {
+        styleOverrides: {
+          root: {
+            minWidth: 200,
+            textTransform: "none",
+            backgroundColor: initTheme.palette.components.Tab_bg,
+            borderColor: initTheme.palette.border.secondary,
+            borderWidth: 1,
+            borderBottomWidth: 0,
+            borderStyle: "solid",
+            borderTopLeftRadius: 6,
+            borderTopRightRadius: 6,
+            fontSize: 14,
+            paddingBlock: 8,
+            minHeight: 40,
+            fontWeight: 600,
+            "&:hover": {
+              color: initTheme.palette.text.primary,
+            },
+            "&.Mui-selected": {
+              borderColor: initTheme.palette.bg.fill.primary,
+              backgroundColor: initTheme.palette.bg.fill.primary,
+              color: initTheme.palette.text.white,
+              "&.Mui-disabled": {
+                backgroundColor: initTheme.palette.bg.disabled,
+                borderColor: initTheme.palette.border.disabled,
+              },
+            },
+            "&.Mui-disabled": {
+              color: initTheme.palette.text.disabled,
+            },
+          },
+        },
+      },
     },
   });
   return {
