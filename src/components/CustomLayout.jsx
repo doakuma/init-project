@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ThemeProvider, Container, createTheme } from "@mui/material";
 
 import useTheme from "@/assets/theme";
@@ -10,11 +11,13 @@ const CustomLayout = (props) => {
   const { children, maxWidth = "xl" } = props;
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useTheme();
-  console.debug("theme", theme);
+  const pathname = usePathname();
+  const { label } = menuinfo.find((menu) => menu.path === pathname);
+  console.debug("path", label);
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={false} disableGutters className="da-wrapper">
-        <CustomHeader handleMenuClick={() => setMenuOpen(true)} />
+        <CustomHeader title={label} handleMenuClick={() => setMenuOpen(true)} />
         <CustomMenu
           open={menuOpen}
           onClose={() => setMenuOpen(false)}

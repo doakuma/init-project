@@ -38,7 +38,6 @@ export const ComponentRender = (item, type) => {
 };
 
 export const ComponentInfoRender = (data, type) => {
-  console.debug("data", data, data.children && typeof data.children);
   return (
     <div className="da-components-source">
       <pre>{JSON.stringify(data, null, 2)}</pre>

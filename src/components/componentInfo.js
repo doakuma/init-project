@@ -1,3 +1,4 @@
+import DeleteIcon from "@mui/icons-material/Delete";
 const componentList = [
   {
     label: "Basic",
@@ -14,7 +15,7 @@ const componentList = [
       },
       {
         label: "CustomChip",
-        isDone: false,
+        isDone: true,
         type: "customchip",
       },
       {
@@ -826,7 +827,7 @@ const componentInfo = {
         // handleClick: "",
         // handleDelete: "",
         // deleteIcon: "",
-        // avatar: "",
+        avatar: "D",
         // icon: "",
         // size: "",
       },
@@ -837,7 +838,10 @@ const componentInfo = {
         // handleClick: "",
         // handleDelete: "",
         // deleteIcon: "",
-        // avatar: "",
+        avatar: {
+          src: "https://avatars.githubusercontent.com/u/2063064?v=4",
+          alt: "avatar",
+        },
         // icon: "",
         // size: "",
       },
@@ -865,6 +869,17 @@ const componentInfo = {
         // icon: "",
         // size: "",
       },
+      {
+        label: "secondary",
+        variant: "contained",
+        color: "secondary",
+        // handleClick: "",
+        // handleDelete: "",
+        // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        size: "small",
+      },
     ],
     [
       {
@@ -889,6 +904,19 @@ const componentInfo = {
           console.debug("deletable");
         },
         // deleteIcon: "",
+        // avatar: "",
+        // icon: "",
+        // size: "",
+      },
+      {
+        label: "deletable",
+        variant: "contained",
+        color: "primary",
+        // handleClick: "",
+        handleDelete: () => {
+          console.debug("deletable");
+        },
+        deleteIcon: <DeleteIcon />,
         // avatar: "",
         // icon: "",
         // size: "",

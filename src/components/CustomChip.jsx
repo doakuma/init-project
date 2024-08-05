@@ -1,5 +1,6 @@
 import React from "react";
 import { Chip, Avatar } from "@mui/material";
+import { isObject } from "lodash";
 
 const CustomChip = (props) => {
   const {
@@ -13,6 +14,13 @@ const CustomChip = (props) => {
     icon,
     size,
   } = props;
+  const renderAvatar = () => {
+    if (isObject(avatar)) {
+      return <Avatar src={avatar.src} alt={avatar.alt} />;
+    } else {
+      return <Avatar>{avatar}</Avatar>;
+    }
+  };
   return (
     <Chip
       label={label}
@@ -21,10 +29,9 @@ const CustomChip = (props) => {
       onClick={handleClick}
       onDelete={handleDelete}
       deleteIcon={deleteIcon}
-      avatar={avatar}
       icon={icon}
       size={size}
-      avatar={avatar && <Avatar src={avatar.src} alt={avatar.alt} />}
+      avatar={avatar && renderAvatar()}
     />
   );
 };
