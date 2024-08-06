@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CustomButton,
   CustomInput,
@@ -35,7 +35,7 @@ export const ComponentRender = (item, type) => {
     case "customtab":
       return <TabsRender {...item} />;
     case "customdatagrid":
-      return <CustomDatagrid {...item} />;
+      return <DataGridRender {...item} />;
 
     case "custommodal":
       return <ModalRender {...item} />;
@@ -97,5 +97,22 @@ const ModalRender = (item) => {
         {...item}
       />
     </>
+  );
+};
+
+const DataGridRender = (item) => {
+  const [rowSelection, setRowSelection] = useState([]);
+  const handleChangeCheck = (newValue) => {
+    setRowSelection(newValue);
+  };
+  useEffect(() => {
+    console.debug("rowSelection", rowSelection);
+  }, [rowSelection]);
+  return (
+    <CustomDatagrid
+      {...item}
+      handleChangeCheck={handleChangeCheck}
+      selectionModal={rowSelection}
+    />
   );
 };

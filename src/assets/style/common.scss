@@ -141,4 +141,18 @@
       }
     }
   }
+  // datagrid
+  &-datagrid {
+    &-wrapper {
+      min-height: 200px;
+    }
+    &-nodata {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      gap: 8px;
+    }
+  }
 }

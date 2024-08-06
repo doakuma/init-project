@@ -1060,6 +1060,77 @@ const componentInfo = {
         useCheckbox: true,
       },
     ],
+    [
+      {
+        gridCols: [
+          { field: "firstName", headerName: "First name", width: 130 },
+          { field: "lastName", headerName: "Last name", width: 130 },
+          {
+            field: "fullName",
+            headerName: "value getter",
+            width: 160,
+            valueGetter: (value, row) => {
+              return `${row.firstName || ""} ${row.lastName || ""}`;
+            },
+          },
+          {
+            field: "renderCell",
+            headerName: "Render Cell",
+            width: 160,
+            renderCell: ({ row }) => {
+              return <CustomButton label={row?.firstName || "button"} />;
+            },
+          },
+        ],
+        gridRows: [
+          { id: 1, lastName: "Snow", firstName: "Jon" },
+          { id: 2, lastName: "Lannister", firstName: "Cersei" },
+          { id: 3, lastName: "Lannister", firstName: "Jaime" },
+          { id: 4, lastName: "Stark", firstName: "Arya" },
+          { id: 5, lastName: "Targaryen", firstName: "Daenerys" },
+        ],
+        loading: true,
+        lodadingType: "linear",
+      },
+      {
+        gridCols: [
+          { field: "firstName", headerName: "First name", width: 130 },
+          { field: "lastName", headerName: "Last name", width: 130 },
+          {
+            field: "fullName",
+            headerName: "value getter",
+            width: 160,
+            valueGetter: (value, row) => {
+              return `${row.firstName || ""} ${row.lastName || ""}`;
+            },
+          },
+        ],
+        gridRows: [
+          { id: 1, lastName: "Snow", firstName: "Jon" },
+          { id: 2, lastName: "Lannister", firstName: "Cersei" },
+          { id: 3, lastName: "Lannister", firstName: "Jaime" },
+          { id: 4, lastName: "Stark", firstName: "Arya" },
+          { id: 5, lastName: "Targaryen", firstName: "Daenerys" },
+        ],
+        loading: true,
+        lodadingType: "circular",
+      },
+      {
+        gridCols: [
+          { field: "firstName", headerName: "First name", width: 130 },
+          { field: "lastName", headerName: "Last name", width: 130 },
+          {
+            field: "fullName",
+            headerName: "value getter",
+            width: 160,
+            valueGetter: (value, row) => {
+              return `${row.firstName || ""} ${row.lastName || ""}`;
+            },
+          },
+        ],
+        gridRows: [],
+      },
+    ],
   ],
 };
 const componentProps = {
