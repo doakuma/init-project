@@ -1,4 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
+import { CustomButton } from ".";
 const componentList = [
   {
     label: "Basic",
@@ -45,7 +46,7 @@ const componentList = [
       },
       {
         label: "CustomTab",
-        isDone: false,
+        isDone: true,
         type: "customtab",
       },
     ],
@@ -89,6 +90,10 @@ const componentList = [
         type: "customtimepicker",
       },
     ],
+  },
+  {
+    label: "Layouts",
+    list: [],
   },
 ];
 const componentInfo = {
@@ -1001,6 +1006,61 @@ const componentInfo = {
       },
     ],
   ],
+  customdatagrid: [
+    [
+      {
+        gridCols: [
+          { field: "firstName", headerName: "First name", width: 130 },
+          { field: "lastName", headerName: "Last name", width: 130 },
+          {
+            field: "fullName",
+            headerName: "value getter",
+            width: 160,
+            valueGetter: (value, row) => {
+              return `${row.firstName || ""} ${row.lastName || ""}`;
+            },
+          },
+          {
+            field: "renderCell",
+            headerName: "Render Cell",
+            width: 160,
+            renderCell: ({ row }) => {
+              return <CustomButton label={row?.firstName || "button"} />;
+            },
+          },
+        ],
+        gridRows: [
+          { id: 1, lastName: "Snow", firstName: "Jon" },
+          { id: 2, lastName: "Lannister", firstName: "Cersei" },
+          { id: 3, lastName: "Lannister", firstName: "Jaime" },
+          { id: 4, lastName: "Stark", firstName: "Arya" },
+          { id: 5, lastName: "Targaryen", firstName: "Daenerys" },
+        ],
+      },
+      {
+        gridCols: [
+          { field: "firstName", headerName: "First name", width: 130 },
+          { field: "lastName", headerName: "Last name", width: 130 },
+          {
+            field: "fullName",
+            headerName: "value getter",
+            width: 160,
+            valueGetter: (value, row) => {
+              return `${row.firstName || ""} ${row.lastName || ""}`;
+            },
+          },
+        ],
+        gridRows: [
+          { id: 1, lastName: "Snow", firstName: "Jon" },
+          { id: 2, lastName: "Lannister", firstName: "Cersei" },
+          { id: 3, lastName: "Lannister", firstName: "Jaime" },
+          { id: 4, lastName: "Stark", firstName: "Arya" },
+          { id: 5, lastName: "Targaryen", firstName: "Daenerys" },
+        ],
+        useCheckbox: true,
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -1319,6 +1379,38 @@ const componentProps = {
     {
       name: "size?",
       type: "small | medium",
+      explain: "",
+    },
+  ],
+  customtab: [
+    {
+      name: "tabValue",
+      type: "any",
+      explain: "",
+    },
+    {
+      name: "handleChange",
+      type: "Function",
+      explain: "",
+    },
+    {
+      name: "tabInfo",
+      type: `{ \n  label: string, \n  value: any, \n  disabled: boolean \n}`,
+      explain: "",
+    },
+    {
+      name: "tabColor?",
+      type: "string",
+      explain: "",
+    },
+    {
+      name: "tabCentered?",
+      type: "boolean",
+      explain: "",
+    },
+    {
+      name: "tabOrientation?",
+      type: "horizontal | vertical",
       explain: "",
     },
   ],

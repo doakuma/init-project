@@ -10,7 +10,6 @@ const CustomTab = (props) => {
     tabCentered,
     tabOrientation,
   } = props;
-  console.debug("CustomTabs", tabValue);
   return (
     <Tabs
       value={tabValue}

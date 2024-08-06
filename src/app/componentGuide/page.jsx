@@ -31,7 +31,7 @@ export default function Home() {
       <div className="da-components">
         <div className="da-components-list">
           {componentList.map((item, idx) => {
-            const sortedList = item.lists.sort((a, b) => {
+            const sortedList = item.lists?.sort((a, b) => {
               if (a.label < b.label) {
                 return -1;
               }
@@ -48,7 +48,7 @@ export default function Home() {
                 </Typography>
                 <List>
                   {/* {console.debug(sortedList(item.lists))} */}
-                  {sortedList.map((list, idx2) => {
+                  {sortedList?.map((list, idx2) => {
                     return (
                       <ListItemButton
                         key={idx2}

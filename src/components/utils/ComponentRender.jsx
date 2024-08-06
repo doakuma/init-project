@@ -10,6 +10,7 @@ import {
   CustomModal,
   CustomChip,
   CustomTab,
+  CustomDatagrid,
 } from "@/components";
 import { useModal } from "./modalUtils";
 
@@ -33,6 +34,9 @@ export const ComponentRender = (item, type) => {
       return <CustomChip {...item} />;
     case "customtab":
       return <TabsRender {...item} />;
+    case "customdatagrid":
+      return <CustomDatagrid {...item} />;
+
     case "custommodal":
       return <ModalRender {...item} />;
     default:
