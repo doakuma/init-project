@@ -32,12 +32,12 @@ export default CustomLayout;
 
 const menuinfo = [
   {
-    label: "componentguide",
-    path: "/componentGuide",
+    label: "pageList",
+    path: "/pageList",
   },
   {
-    label: "Starred",
-    path: "/",
+    label: "componentguide",
+    path: "/componentGuide",
   },
   {
     label: "Drafts",

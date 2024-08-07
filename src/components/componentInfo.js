@@ -31,7 +31,7 @@ const componentList = [
       },
       {
         label: "CustomDatagrid",
-        isDone: false,
+        isDone: true,
         type: "customdatagrid",
       },
       {
@@ -96,7 +96,7 @@ const componentList = [
     lists: [
       {
         label: "CustomSearch",
-        isDone: false,
+        isDone: true,
         type: "customsearch",
       },
     ],

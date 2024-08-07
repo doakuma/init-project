@@ -132,7 +132,6 @@ const SearchRender = (item) => {
         handleSearch={handleSearch}
         searchParams={searchParams}
       />
-      {/* guide 화면에서만 사용 */}
       <div className="da-components-source">
         <pre>{JSON.stringify(searchParams, null, 2)}</pre>
       </div>
