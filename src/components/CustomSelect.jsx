@@ -22,6 +22,7 @@ const CustomSelect = (props) => {
     required,
     size,
     helperText,
+    isMultiple,
   } = props;
   return (
     <FormControl
@@ -43,6 +44,7 @@ const CustomSelect = (props) => {
         inputProps={{
           readOnly: readOnly,
         }}
+        multiple={isMultiple}
       >
         {options.map((item, idx) => {
           return (

@@ -130,6 +130,7 @@ const SearchRender = (item) => {
         handleChange={handleChange}
         handleClear={handleClear}
         handleSearch={handleSearch}
+        searchParams={searchParams}
       />
       {/* guide 화면에서만 사용 */}
       <div className="da-components-source">

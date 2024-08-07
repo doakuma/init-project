@@ -29,7 +29,22 @@ export const useSearch = (initParams, apiInfo) => {
           ...prev,
           [name]: checked,
         }));
+        break;
+      case "customselect":
+        console.debug("customselect", value);
+        // const values = isString(value) ? value :
+        setSearchParams((prev) => {
+          const currentValues =
+            typeof value === "string" ? value.split(",") : value;
+          const newValues = checked
+            ? [...currentValues, value]
+            : currentValues.filter((v) => v !== value);
 
+          return {
+            ...prev,
+            [name]: currentValues,
+          };
+        });
         break;
       default:
         setSearchParams((prev) => ({

@@ -1218,13 +1218,35 @@ const componentInfo = {
           {
             name: "search05",
             title: "검색5",
+            type: "customselect",
+            defaultValue: "female",
+            value: [],
+            isMultiple: true,
+            options: [
+              {
+                label: "Female",
+                value: "female",
+              },
+              {
+                label: "Male",
+                value: "male",
+              },
+              {
+                label: "Other",
+                value: "other",
+              },
+            ],
+          },
+          {
+            name: "search06",
+            title: "검색6",
             type: "customswitch",
             defaultValue: "female",
             options: [
               {
                 label: "Female",
                 value: "female",
-                name: "search05",
+                name: "search06",
               },
             ],
           },
@@ -1234,7 +1256,8 @@ const componentInfo = {
           search02: [],
           search03: "",
           search04: "",
-          search04: "",
+          search05: [],
+          search06: "",
         },
       },
     ],

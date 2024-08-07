@@ -4,14 +4,24 @@ import { useSearch } from "@/utils/common";
 import { CustomButton } from "..";
 
 const CustomSearch = (props) => {
-  const { searchInfo, handleChange, handleClear, handleSearch } = props;
+  const { searchInfo, handleChange, handleClear, handleSearch, searchParams } =
+    props;
 
-  // const { searchParams, handleChange, handleClear, handleSearch, result } =    useSearch(initParams);
+  const searchStructure = searchInfo.map((item) => {
+    if (item.type === "customselect" && item.isMultiple) {
+      return {
+        ...item,
+        value: searchParams[item.name],
+      };
+    } else {
+      return { ...item };
+    }
+  });
   return (
     <>
       <div className="da-search-wrapper">
         <div className="da-search-content">
-          {searchInfo.map((item, idx) => {
+          {searchStructure.map((item, idx) => {
             const { type } = item;
             Object.assign(item, {
               handleChange: (e) => handleChange(e, type),
