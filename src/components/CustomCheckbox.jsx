@@ -9,7 +9,7 @@ import {
 import { isEmpty } from "lodash";
 
 const CustomCheckbox = (props) => {
-  const { handleChange, options, defaultValue, row = true } = props;
+  const { handleChange, options, defaultValue, name, row = true } = props;
   return (
     <FormControl>
       <FormGroup row={row}>
@@ -17,13 +17,14 @@ const CustomCheckbox = (props) => {
           options.map((item, idx) => {
             return (
               <FormControlLabel
-                value={item.value}
+                // value={item.value}
                 label={item.label}
                 control={
                   <Checkbox
                     defaultChecked={item.value === defaultValue}
-                    onchange={handleChange}
-                    name={item.name}
+                    onChange={handleChange}
+                    name={name}
+                    value={item.value}
                   />
                 }
                 key={idx}

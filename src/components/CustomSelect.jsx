@@ -12,6 +12,7 @@ const CustomSelect = (props) => {
     labelId,
     label,
     id,
+    name,
     value,
     handleChange,
     options,
@@ -36,6 +37,7 @@ const CustomSelect = (props) => {
         id={id}
         value={value}
         label={label}
+        name={name}
         onChange={handleChange}
         autoWidth
         inputProps={{

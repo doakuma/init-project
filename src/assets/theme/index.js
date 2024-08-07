@@ -165,6 +165,17 @@ const useTheme = () => {
           },
         },
       },
+      // Inputs
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            backgroundColor: initTheme.palette.bg.base,
+          },
+          input: {
+            padding: "8px 12px",
+          },
+        },
+      },
     },
   });
   return {

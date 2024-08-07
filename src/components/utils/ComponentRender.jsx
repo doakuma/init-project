@@ -11,6 +11,7 @@ import {
   CustomChip,
   CustomTab,
   CustomDatagrid,
+  CustomSearch,
 } from "@/components";
 import { useModal } from "./modalUtils";
 
@@ -36,6 +37,8 @@ export const ComponentRender = (item, type) => {
       return <TabsRender {...item} />;
     case "customdatagrid":
       return <DataGridRender {...item} />;
+    case "customsearch":
+      return <CustomSearch {...item} />;
 
     case "custommodal":
       return <ModalRender {...item} />;

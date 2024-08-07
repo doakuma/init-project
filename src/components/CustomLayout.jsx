@@ -13,7 +13,6 @@ const CustomLayout = (props) => {
   const { theme } = useTheme();
   const pathname = usePathname();
   const { label } = menuinfo.find((menu) => menu.path === pathname);
-  console.debug("path", label);
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={false} disableGutters className="da-wrapper">

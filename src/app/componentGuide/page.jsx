@@ -26,6 +26,7 @@ export default function Home() {
   const handleClickList = (type) => {
     setCompType(type.toLowerCase());
   };
+  const isFull = compType === "customsearch";
   return (
     <>
       <div className="da-components">
@@ -76,7 +77,12 @@ export default function Home() {
                   <div className="da-components-item" key={idx}>
                     {item.map((component, idx2) => {
                       return (
-                        <div className="da-components-cell" key={idx2}>
+                        <div
+                          className={`da-components-cell ${
+                            isFull ? "da-components-full" : ""
+                          }`}
+                          key={idx2}
+                        >
                           <div className="da-components-render">
                             {ComponentRender(component, compType)}
                           </div>

@@ -5,10 +5,11 @@ const CustomInput = (props) => {
   const {
     id,
     label,
+    name,
     variant,
     required,
     defaultValue,
-    onChange,
+    handleChange,
     readOnly,
     disabled,
     type,
@@ -20,11 +21,11 @@ const CustomInput = (props) => {
       <TextField
         id={id}
         label={label}
-        name={id}
+        name={name}
         variant={variant}
         required={required}
         defaultValue={defaultValue}
-        // onChange={onChange}
+        onChange={handleChange}
         InputProps={{
           readOnly: readOnly,
         }}

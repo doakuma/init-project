@@ -93,7 +93,17 @@ const componentList = [
   },
   {
     label: "Layouts",
-    list: [],
+    lists: [
+      {
+        label: "CustomSearch",
+        isDone: false,
+        type: "customsearch",
+      },
+    ],
+  },
+  {
+    label: "Util Function",
+    lists: [],
   },
 ];
 const componentInfo = {
@@ -1129,6 +1139,103 @@ const componentInfo = {
           },
         ],
         gridRows: [],
+      },
+    ],
+  ],
+  customsearch: [
+    [
+      {
+        searchInfo: [
+          {
+            name: "search01",
+            title: "검색1",
+            type: "custominput",
+            defaultValue: "",
+          },
+          {
+            name: "search02",
+            title: "검색2",
+            type: "customcheckbox",
+            defaultValue: "female",
+            row: true,
+            options: [
+              {
+                label: "Female",
+                value: "female",
+              },
+              {
+                label: "Male",
+                value: "male",
+              },
+              {
+                label: "Other",
+                value: "other",
+              },
+            ],
+          },
+          {
+            name: "search03",
+            title: "검색3",
+            type: "customradio",
+            value: "",
+            defaultValue: "female",
+            row: true,
+            options: [
+              {
+                label: "Female",
+                value: "female",
+              },
+              {
+                label: "Male",
+                value: "male",
+              },
+              {
+                label: "Other",
+                value: "other",
+              },
+            ],
+          },
+          {
+            name: "search04",
+            title: "검색4",
+            type: "customselect",
+            defaultValue: "female",
+            options: [
+              {
+                label: "Female",
+                value: "female",
+              },
+              {
+                label: "Male",
+                value: "male",
+              },
+              {
+                label: "Other",
+                value: "other",
+              },
+            ],
+          },
+          {
+            name: "search05",
+            title: "검색5",
+            type: "customswitch",
+            defaultValue: "female",
+            options: [
+              {
+                label: "Female",
+                value: "female",
+                name: "search05",
+              },
+            ],
+          },
+        ],
+        initParams: {
+          search01: "",
+          search02: [],
+          search03: "",
+          search04: "",
+          search04: "",
+        },
       },
     ],
   ],
