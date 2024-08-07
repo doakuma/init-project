@@ -1636,6 +1636,11 @@ const componentProps = {
       type: "function",
       explain: "useSearch() 를 통해 부모로부터 전달받은 함수",
     },
+    {
+      name: "searchParams",
+      type: "function",
+      explain: "useSearch() 를 통해 부모로부터 parameter",
+    },
   ],
 };
 

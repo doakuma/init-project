@@ -1,6 +1,5 @@
 import React from "react";
 import { RenderItem } from "@/utils/RenderItem";
-import { useSearch } from "@/utils/common";
 import { CustomButton } from "..";
 
 const CustomSearch = (props) => {
