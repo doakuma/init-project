@@ -14,6 +14,7 @@ import {
   CustomSearch,
 } from "@/components";
 import { useModal } from "./modalUtils";
+import { useSearch } from "@/utils/common";
 
 export const ComponentRender = (item, type) => {
   switch (type) {
@@ -38,8 +39,7 @@ export const ComponentRender = (item, type) => {
     case "customdatagrid":
       return <DataGridRender {...item} />;
     case "customsearch":
-      return <CustomSearch {...item} />;
-
+      return <SearchRender {...item} />;
     case "custommodal":
       return <ModalRender {...item} />;
     default:
@@ -117,5 +117,24 @@ const DataGridRender = (item) => {
       handleChangeCheck={handleChangeCheck}
       selectionModal={rowSelection}
     />
+  );
+};
+
+const SearchRender = (item) => {
+  const { searchParams, handleChange, handleClear, handleSearch, result } =
+    useSearch(item.initParams);
+  return (
+    <>
+      <CustomSearch
+        searchInfo={item.searchInfo}
+        handleChange={handleChange}
+        handleClear={handleClear}
+        handleSearch={handleSearch}
+      />
+      {/* guide 화면에서만 사용 */}
+      <div className="da-components-source">
+        <pre>{JSON.stringify(searchParams, null, 2)}</pre>
+      </div>
+    </>
   );
 };

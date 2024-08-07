@@ -4,10 +4,9 @@ import { useSearch } from "@/utils/common";
 import { CustomButton } from "..";
 
 const CustomSearch = (props) => {
-  const { searchInfo, initParams } = props;
+  const { searchInfo, handleChange, handleClear, handleSearch } = props;
 
-  const { searchParams, handleChange, handleClear, handleSearch, result } =
-    useSearch(initParams);
+  // const { searchParams, handleChange, handleClear, handleSearch, result } =    useSearch(initParams);
   return (
     <>
       <div className="da-search-wrapper">
@@ -36,11 +35,6 @@ const CustomSearch = (props) => {
             onClick={handleSearch}
           />
         </div>
-      </div>
-
-      {/* guide 화면에서만 사용 */}
-      <div className="da-components-source">
-        <pre>{JSON.stringify(searchParams, null, 2)}</pre>
       </div>
     </>
   );

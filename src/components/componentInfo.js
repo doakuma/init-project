@@ -1156,7 +1156,7 @@ const componentInfo = {
             name: "search02",
             title: "검색2",
             type: "customcheckbox",
-            defaultValue: "female",
+            defaultValue: "",
             row: true,
             options: [
               {
@@ -1590,6 +1590,28 @@ const componentProps = {
       name: "tabOrientation?",
       type: "horizontal | vertical",
       explain: "",
+    },
+  ],
+  customsearch: [
+    {
+      name: "searchInfo",
+      type: "object",
+      explain: "",
+    },
+    {
+      name: "handleChange",
+      type: "function",
+      explain: "useSearch() 를 통해 부모로부터 전달받은 함수",
+    },
+    {
+      name: "handleClear",
+      type: "function",
+      explain: "useSearch() 를 통해 부모로부터 전달받은 함수",
+    },
+    {
+      name: "handleSearch",
+      type: "function",
+      explain: "useSearch() 를 통해 부모로부터 전달받은 함수",
     },
   ],
 };
