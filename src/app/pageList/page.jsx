@@ -4,6 +4,7 @@ import dayjs from "dayjs";
 import { drawTable } from "./module.function";
 import { isEmpty } from "lodash";
 import { getData, updateData, createData } from "@/service/common";
+import { renderTale } from "./pageComponent";
 import { pageLists } from "./pageList";
 import "./dashboard.css";
 
@@ -120,27 +121,20 @@ const PageList = (props) => {
     getColumnList();
     getList();
   }, []);
-  useEffect(() => {
-    drawTable(pageColumn, pageData);
-    drawStatusInfo(pageData);
-  }, [pageColumn, pageData]);
+
   return (
     <div className="page-list">
       <div className="homeWrap">
         <header className="header">
           <h1 className="headerTitle">PageList</h1>
-          <ul className="headerInfo statusInfo">
-            {drawStatusInfo(pageData.rows)}
-          </ul>
+          <ul className="headerInfo statusInfo">{drawStatusInfo(pageData)}</ul>
         </header>
         <div className="box-status-legend">
           <strong className="reported-date">Today : {reportedDate}</strong>
           <button onClick={() => createList()}>create</button>
           <button onClick={() => updateList()}>update</button>
         </div>
-        <main className="content">
-          <div className="page-list-wrapper"></div>
-        </main>
+        {renderTale(pageColumn, pageData)}
       </div>
     </div>
   );
