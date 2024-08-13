@@ -10,4 +10,5 @@ export { default as CustomModal } from "./CustomModal";
 export { default as CustomChip } from "./CustomChip";
 export { default as CustomTab } from "./CustomTab";
 export { default as CustomDatagrid } from "./CustomDatagrid";
+export { default as CustomDatePicker } from "./CustomDatePicker";
 export { default as CustomSearch } from "./layout/CustomSearch";

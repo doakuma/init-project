@@ -121,7 +121,6 @@ const PageList = (props) => {
     getColumnList();
     getList();
   }, []);
-
   return (
     <div className="page-list">
       <div className="homeWrap">

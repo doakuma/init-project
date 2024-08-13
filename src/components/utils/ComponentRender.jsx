@@ -12,6 +12,7 @@ import {
   CustomTab,
   CustomDatagrid,
   CustomSearch,
+  CustomDatePicker,
 } from "@/components";
 import { useModal } from "./modalUtils";
 import { useSearch } from "@/utils/common";
@@ -42,6 +43,8 @@ export const ComponentRender = (item, type) => {
       return <SearchRender {...item} />;
     case "custommodal":
       return <ModalRender {...item} />;
+    case "customdatepicker":
+      return <DatePickerRender {...item} />;
     default:
       return null;
   }
@@ -131,6 +134,21 @@ const SearchRender = (item) => {
         handleClear={handleClear}
         handleSearch={handleSearch}
         searchParams={searchParams}
+      />
+      <div className="da-components-source">
+        <pre>{JSON.stringify(searchParams, null, 2)}</pre>
+      </div>
+    </>
+  );
+};
+const DatePickerRender = (item) => {
+  const { searchParams, handleChange, handleClear, handleSearch, result } =
+    useSearch(item.initParams);
+  return (
+    <>
+      <CustomDatePicker
+        {...item}
+        handleChange={(e) => handleChange(e, "customdatepicker", "search01")}
       />
       <div className="da-components-source">
         <pre>{JSON.stringify(searchParams, null, 2)}</pre>

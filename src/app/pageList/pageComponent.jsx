@@ -58,6 +58,8 @@ const renderCell = (data, type, idx) => {
     //   var _specs = createSpecs(data);
     //   _td.appendChild(_specs);
     //   return _td;
+    case "utils":
+      return <button>수정</button>;
     default:
       return data[type];
   }

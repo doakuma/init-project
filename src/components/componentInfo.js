@@ -49,6 +49,11 @@ const componentList = [
         isDone: true,
         type: "customtab",
       },
+      {
+        label: "CustomTreeView",
+        isDone: false,
+        type: "customtreeview",
+      },
     ],
   },
   {
@@ -1262,6 +1267,17 @@ const componentInfo = {
       },
     ],
   ],
+  customdatepicker: [
+    [
+      {
+        defaultValue: "2024-08-11",
+        name: "search01",
+        initParams: {
+          search01: "",
+        },
+      },
+    ],
+  ],
 };
 const componentProps = {
   custombutton: [
@@ -1615,6 +1631,7 @@ const componentProps = {
       explain: "",
     },
   ],
+  customdatepicker: [],
   customsearch: [
     {
       name: "searchInfo",
