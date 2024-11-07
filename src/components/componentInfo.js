@@ -1,5 +1,5 @@
 import DeleteIcon from "@mui/icons-material/Delete";
-import { CustomButton } from ".";
+import { CustomAccordion, CustomButton } from ".";
 const componentList = [
   {
     label: "Basic",
@@ -54,6 +54,12 @@ const componentList = [
         isDone: false,
         type: "customtreeview",
       },
+
+      {
+        label: "CustomAvatar",
+        isDone: false,
+        type: "customavatar",
+      },
     ],
   },
   {
@@ -93,6 +99,16 @@ const componentList = [
         label: "CustomTimepicker",
         isDone: false,
         type: "customtimepicker",
+      },
+      {
+        label: "CustomSlider",
+        isDone: false,
+        type: "customslider",
+      },
+      {
+        label: "CustomScheduler",
+        isDone: false,
+        type: "customscheduler",
       },
     ],
   },
@@ -1275,6 +1291,67 @@ const componentInfo = {
         initParams: {
           search01: "",
         },
+      },
+    ],
+  ],
+  customAccordion: [
+    {
+      title: "Accordion 1",
+      content:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur excepturi non, temporibus dicta velit, distinctio sit error sunt voluptates beatae quam quaerat impedit obcaecati voluptatibus voluptas nulla libero, quas officiis.",
+    },
+    {
+      title: "Accordion 2",
+      content:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur excepturi non, temporibus dicta velit, distinctio sit error sunt voluptates beatae quam quaerat impedit obcaecati voluptatibus voluptas nulla libero, quas officiis.",
+    },
+  ],
+  customslider: [
+    [
+      {
+        marks: [
+          {
+            value: 0,
+            label: "0°C",
+          },
+          {
+            value: 20,
+            label: "20°C",
+          },
+          {
+            value: 37,
+            label: "37°C",
+          },
+          {
+            value: 100,
+            label: "100°C",
+          },
+        ],
+        defaultValue: [20, 80],
+        valueText: (value) => `${value}°C`,
+        step: 10,
+        valueLabelDisplay: "on",
+      },
+    ],
+  ],
+  customscheduler: [
+    [
+      {
+        defaultValue: new Date(),
+        daysToHighlight: [
+          {
+            eventDate: "2024-11-11",
+            eventCount: 48,
+          },
+          {
+            eventDate: "2024-11-13",
+            eventCount: 36,
+          },
+          {
+            eventDate: "2024-11-22",
+            eventCount: 22,
+          },
+        ],
       },
     ],
   ],

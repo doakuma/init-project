@@ -13,6 +13,9 @@ import {
   CustomDatagrid,
   CustomSearch,
   CustomDatePicker,
+  CustomAccordion,
+  CustomSlider,
+  CustomScheduler,
 } from "@/components";
 import { useModal } from "./modalUtils";
 import { useSearch } from "@/utils/common";
@@ -45,6 +48,12 @@ export const ComponentRender = (item, type) => {
       return <ModalRender {...item} />;
     case "customdatepicker":
       return <DatePickerRender {...item} />;
+    case "customaccordion":
+      return <CustomAccordion {...item} />;
+    case "customslider":
+      return <CustomSlider {...item} />;
+    case "customscheduler":
+      return <CustomScheduler {...item} />;
     default:
       return null;
   }

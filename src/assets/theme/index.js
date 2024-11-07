@@ -10,6 +10,8 @@ const themePalette = (mode) => {
   return { ...lightThemes };
 };
 
+const ratio = 2;
+
 const useTheme = () => {
   const [settings] = useRecoilState(settingsState);
 
@@ -173,6 +175,66 @@ const useTheme = () => {
           },
           input: {
             padding: "8px 12px",
+          },
+        },
+      },
+      MuiDateCalendar: {
+        styleOverrides: {
+          root: {
+            "&.da-scheduler": {
+              width: "auto",
+              height: 336 * ratio,
+              maxHeight: 336 * ratio,
+              ".MuiDayCalendar-header": {},
+              ".MuiDayCalendar-weekDayLabel": {
+                width: `calc(36px * ${ratio})`,
+                height: `calc(40px * ${ratio})`,
+                margin: 0,
+                border: "1px solid #eaeaea",
+                borderRightWidth: 0,
+                borderBottomWidth: 0,
+                "&:last-of-type": {
+                  borderRightWidth: 1,
+                },
+              },
+              ".MuiDayCalendar-slideTransition": {
+                minHeight: 240 * ratio,
+              },
+              ".MuiDayCalendar-monthContainer": {
+                display: "flex",
+                flexDirection: "column",
+              },
+              ".MuiDayCalendar-weekContainer": {
+                margin: 0,
+                "&:last-of-type > div": {
+                  borderBottomWidth: 1,
+                },
+              },
+              ".MuiDayCalendar-weekContainer > div": {
+                width: `calc(36px * ${ratio})`,
+                height: `calc(36px * ${ratio})`,
+                border: "1px solid #eaeaea",
+                borderRightWidth: 0,
+                borderBottomWidth: 0,
+                "&:last-of-type": {
+                  borderRightWidth: 1,
+                },
+              },
+              ".MuiPickersDay-root": {
+                width: "auto",
+                height: "auto",
+                borderRadius: "unset",
+              },
+              ".MuiButton-root": {
+                display: "flex",
+                flexDirection: "column-reverse",
+                justifyContent: "flex-end",
+                alignItems: "flex-end",
+                width: "100%",
+                height: "100%",
+                padding: 0,
+              },
+            },
           },
         },
       },
