@@ -183,7 +183,7 @@ const useTheme = () => {
           root: {
             "&.da-scheduler": {
               width: "auto",
-              height: 336 * ratio,
+              height: "auto",
               maxHeight: 336 * ratio,
               ".MuiDayCalendar-header": {},
               ".MuiDayCalendar-weekDayLabel": {

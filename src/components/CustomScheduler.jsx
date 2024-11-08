@@ -13,7 +13,22 @@ function ServerDay(props, events) {
 
   const isSelected =
     !props.outsideCurrentMonth &&
-    highlightedDays.indexOf(props.day.date()) >= 0;
+    highlightedDays.some(
+      (highlightedDay) =>
+        highlightedDay.year === props.day.year() &&
+        highlightedDay.month === props.day.month() + 1 && // month는 0부터 시작하므로 +1
+        highlightedDay.day === props.day.date()
+    );
+
+  console.debug(
+    "highlightedDays.indexOf(day.date())",
+    day,
+    day.date(),
+    day.month(),
+    highlightedDays.indexOf(day.year()),
+    highlightedDays.indexOf(day.month() + 1),
+    highlightedDays.indexOf(day.date())
+  );
   const eventCount = events.find((e) => {
     return e.eventDate === dayjs(day).format("YYYY-MM-DD");
   });
@@ -40,35 +55,27 @@ function ServerDay(props, events) {
 const CustomScheduler = (props) => {
   const { defaultValue, daysToHighlight } = props;
   const requestAbortController = React.useRef(null);
-  const [isLoading, setIsLoading] = useState(false);
   const [highlightedDays, setHighlightedDays] = useState([]);
 
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
+    // 날짜를 { year, month, day } 객체로 변환하여 배열로 저장
     const days = date.map((item) => {
-      return dayjs(item.eventDate).date();
+      const eventDate = dayjs(item.eventDate);
+      return {
+        year: eventDate.year(),
+        month: eventDate.month() + 1, // month는 0부터 시작하므로 1을 더해줍니다.
+        day: eventDate.date(),
+      };
     });
     setHighlightedDays(days);
-    //   fakeFetch(date, {
-    //     signal: controller.signal,
-    //   })
-    //     .then(({ daysToHighlight }) => {
-    //       console.debug("daysToHighlight", daysToHighlight);
-    // setHighlightedDays(daysToHighlight);
-    //       setIsLoading(false);
-    //     })
-    //     .catch((error) => {
-    //       // ignore the error if it's caused by `controller.abort`
-    //       if (error.name !== "AbortError") {
-    //         throw error;
-    //       }
-    //     });
     requestAbortController.current = controller;
   };
 
   useEffect(() => {
     fetchHighlightedDays(daysToHighlight);
     // abort request on unmount
+    return () => requestAbortController.current?.abort();
   }, [daysToHighlight]);
 
   const handleMonthChange = (date) => {
@@ -88,9 +95,7 @@ const CustomScheduler = (props) => {
         <DateCalendar
           className="da-scheduler"
           defaultValue={initialValue}
-          loading={isLoading}
           onMonthChange={handleMonthChange}
-          // renderLoading={() => <DayCalendarSkeleton />}
           slots={{
             day: (param) => ServerDay(param, daysToHighlight),
           }}
