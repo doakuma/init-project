@@ -100,7 +100,7 @@ export const componentList = [
       },
       {
         label: "CustomSlider",
-        isDone: false,
+        isDone: true,
         type: "customslider",
       },
       {

@@ -20,15 +20,6 @@ function ServerDay(props, events) {
         highlightedDay.day === props.day.date()
     );
 
-  console.debug(
-    "highlightedDays.indexOf(day.date())",
-    day,
-    day.date(),
-    day.month(),
-    highlightedDays.indexOf(day.year()),
-    highlightedDays.indexOf(day.month() + 1),
-    highlightedDays.indexOf(day.date())
-  );
   const eventCount = events.find((e) => {
     return e.eventDate === dayjs(day).format("YYYY-MM-DD");
   });
