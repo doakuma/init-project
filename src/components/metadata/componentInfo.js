@@ -67,6 +67,7 @@ export const componentInfo = {
         onChange: "handleChange",
         readOnly: false,
         disabled: false,
+        fullWidth: true,
         type: "",
         helperText: "",
       },

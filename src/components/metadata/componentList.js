@@ -58,6 +58,11 @@ export const componentList = [
         isDone: false,
         type: "customavatar",
       },
+      {
+        label: "CustomMenu",
+        isDone: false,
+        type: "custommenu",
+      },
     ],
   },
   {
