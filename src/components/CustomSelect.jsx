@@ -6,6 +6,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
+import styled from "@emotion/styled";
 
 const CustomSelect = (props) => {
   const {
@@ -25,7 +26,7 @@ const CustomSelect = (props) => {
     isMultiple,
   } = props;
   return (
-    <FormControl
+    <SelectWrap
       fullWidth
       disabled={disabled}
       error={error}
@@ -40,7 +41,6 @@ const CustomSelect = (props) => {
         label={label}
         name={name}
         onChange={handleChange}
-        autoWidth
         inputProps={{
           readOnly: readOnly,
         }}
@@ -55,7 +55,25 @@ const CustomSelect = (props) => {
         })}
       </Select>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
-    </FormControl>
+    </SelectWrap>
   );
 };
 export default CustomSelect;
+
+const SelectWrap = styled(FormControl)(() => ({
+  gap: "0.25rem",
+  "& .MuiFormLabel-root": {
+    position: "static",
+    transform: "unset",
+  },
+  "& fieldset": {
+    top: 0,
+  },
+  "& legend": {
+    display: "none",
+  },
+  "& .MuiInputBase-input": {
+    minHeight: "unset",
+    height: "100%",
+  },
+}));
