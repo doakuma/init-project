@@ -19,6 +19,7 @@ export { default as CustomDatagrid } from "./data-display/CustomDatagrid";
 export { default as CustomScheduler } from "./data-display/CustomScheduler";
 export { default as CustomTab } from "./data-display/CustomTab";
 export { default as CustomTable } from "./data-display/CustomTable";
+export { default as CustomCarousel } from "./data-display/CustomCarousel";
 
 // feedback
 export { default as CustomModal } from "./feedback/CustomModal";

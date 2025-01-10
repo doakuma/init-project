@@ -1257,4 +1257,38 @@ export const componentInfo = {
       },
     ],
   ],
+  customcarousel: [
+    [
+      {
+        itemsPerPage: 3,
+        // data: [1, 2, 3, 4, 5, 6],
+        data: [
+          {
+            title: "Shrimp and Chorizo Paella",
+            content:
+              "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+            imgSrc: "/temp/@img_paella.jpg",
+          },
+          {
+            title: "Lizard",
+            content:
+              "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.",
+            imgSrc: "/temp/@img_contemplative-reptile.jpg",
+          },
+          {
+            title: "Lizard",
+            content:
+              "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.",
+            imgSrc: "/temp/@img_contemplative-reptile.jpg",
+          },
+          {
+            title: "Shrimp and Chorizo Paella",
+            content:
+              "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
+            imgSrc: "/temp/@img_paella.jpg",
+          },
+        ],
+      },
+    ],
+  ],
 };

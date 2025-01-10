@@ -17,9 +17,11 @@ import {
   CustomSlider,
   CustomScheduler,
   CustomToggleButton,
+  CustomCarousel,
 } from "@/components";
 import { useModal } from "./modalUtils";
 import { useSearch } from "@/utils/common";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 export const ComponentRender = (item, type) => {
   switch (type) {
@@ -57,9 +59,32 @@ export const ComponentRender = (item, type) => {
       return <CustomScheduler {...item} />;
     case "customtogglebutton":
       return <ToggleRenderer {...item} />;
+    case "customcarousel":
+      return <CarouselRender {...item} />;
     default:
       return null;
   }
+};
+
+export const CarouselRender = (data) => {
+  const renderItem = (item) => {
+    return (
+      <Card>
+        <CardMedia sx={{ height: 140 }} image={item.imgSrc} />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {item.title}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            {item.content}
+          </Typography>
+        </CardContent>
+      </Card>
+    );
+  };
+
+  // renderSlideItem에 함수 전달
+  return <CustomCarousel {...data} renderSlideItem={renderItem} />;
 };
 
 export const ComponentInfoRender = (data, type) => {
