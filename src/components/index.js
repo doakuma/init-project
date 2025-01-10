@@ -14,4 +14,5 @@ export { default as CustomDatagrid } from "./CustomDatagrid";
 export { default as CustomDatePicker } from "./CustomDatePicker";
 export { default as CustomAccordion } from "./CustomAccordion";
 export { default as CustomScheduler } from "./CustomScheduler";
+export { default as CustomToggleButton } from "./CustomToggleButton";
 export { default as CustomSearch } from "./layout/CustomSearch";

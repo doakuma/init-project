@@ -16,6 +16,7 @@ import {
   CustomAccordion,
   CustomSlider,
   CustomScheduler,
+  CustomToggleButton,
 } from "@/components";
 import { useModal } from "./modalUtils";
 import { useSearch } from "@/utils/common";
@@ -54,6 +55,8 @@ export const ComponentRender = (item, type) => {
       return <CustomSlider {...item} />;
     case "customscheduler":
       return <CustomScheduler {...item} />;
+    case "customtogglebutton":
+      return <ToggleRenderer {...item} />;
     default:
       return null;
   }
@@ -84,6 +87,7 @@ export const ComponentPropsRender = (data) => {
             {item.name}:
           </dt>
           <dd className="type">{typeRender(item.type)}</dd>
+          {item.default && <dd className="default">{item.default}</dd>}
           {item.explain && <dd className="explain">{item.explain}</dd>}
         </dl>
       ))}
@@ -163,5 +167,20 @@ const DatePickerRender = (item) => {
         <pre>{JSON.stringify(searchParams, null, 2)}</pre>
       </div>
     </>
+  );
+};
+const ToggleRenderer = (item) => {
+  const [value, setValue] = useState("BTN01");
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <CustomToggleButton
+      {...item}
+      value={value}
+      exclusive={true}
+      handleChange={handleChange}
+    />
   );
 };

@@ -63,6 +63,11 @@ export const componentList = [
         isDone: false,
         type: "custommenu",
       },
+      {
+        label: "CustomToggleButton",
+        isDone: false,
+        type: "customtogglebutton",
+      },
     ],
   },
   {

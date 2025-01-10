@@ -1236,4 +1236,25 @@ export const componentInfo = {
       },
     ],
   ],
+  customtogglebutton: [
+    [
+      {
+        options: [
+          {
+            label: "BTN01",
+            value: "BTN01",
+          },
+          {
+            label: "BTN02",
+            value: "BTN02",
+          },
+          {
+            label: "BTN03",
+            value: "BTN03",
+          },
+        ],
+        value: "BTN01",
+      },
+    ],
+  ],
 };

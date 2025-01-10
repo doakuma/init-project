@@ -378,4 +378,32 @@ export const componentProps = {
       explain: "useSearch() 를 통해 부모로부터 parameter",
     },
   ],
+  customtogglebutton: [
+    {
+      name: "options",
+      type: "obect[]",
+      explain: "토글 버튼 객체",
+    },
+    {
+      name: "value",
+      type: "any",
+      explain: "토글 버튼 기본값",
+    },
+    {
+      name: "handleChange",
+      type: "Function",
+      explain: "토글 버튼 변경 함수",
+    },
+    {
+      name: "color?",
+      type: "'standard' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | string",
+      explain: "토글 버튼 컬러",
+    },
+    {
+      name: "exclusive?",
+      type: "boolean",
+      default: "true",
+      explain: "토글 버튼 단일 선택 여부",
+    },
+  ],
 };

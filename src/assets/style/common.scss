@@ -186,7 +186,13 @@
             color: var(--k-info);
           }
           &.type {
-            padding: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--color-navy-100);
+            color: var(--k-grey-900);
+            border-radius: 0.25rem;
+          }
+          &.default {
+            padding: 0.25rem 0.5rem;
             background: var(--k-grey-300);
             color: var(--k-grey-900);
             border-radius: 0.25rem;
