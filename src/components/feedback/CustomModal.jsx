@@ -8,7 +8,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import { CustomButton } from ".";
+import { CustomButton } from "..";
 import CloseIcon from "@mui/icons-material/Close";
 
 const CustomModal = (props) => {

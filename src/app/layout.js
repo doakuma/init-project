@@ -5,7 +5,7 @@ import "../assets/style/common.scss";
 import { useEffect } from "react";
 import { Container, CssBaseline } from "@mui/material";
 import { RecoilRoot } from "recoil";
-import CustomLayout from "@/components/CustomLayout";
+import CustomLayout from "@/components/layout/CustomLayout";
 
 // export const metadata = {
 //   title: "Create Next App",

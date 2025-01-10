@@ -5,7 +5,7 @@ import { ThemeProvider, Container, createTheme } from "@mui/material";
 
 import useTheme from "@/assets/theme";
 import CustomHeader from "./CustomHeader";
-import CustomMenu from "./CustomMenu";
+import CustomMenu from "../navigation/CustomMenu";
 
 const CustomLayout = (props) => {
   const { children, maxWidth = "xl" } = props;
