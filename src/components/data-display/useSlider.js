@@ -28,7 +28,7 @@ const useSlider = (data, itemsPerPage, autoplayInterval = 3000) => {
         : prev - (itemsPerPage || 1)
     );
     stopAutoplay();
-  }, [data.length, itemsPerPage, isSliderDisabled]);
+  }, [data.length, itemsPerPage, isSliderDisabled, stopAutoplay]);
 
   // 다음 버튼 핸들러
   const handleNext = useCallback(() => {
@@ -37,7 +37,7 @@ const useSlider = (data, itemsPerPage, autoplayInterval = 3000) => {
       prev + (itemsPerPage || 1) >= data.length ? 0 : prev + (itemsPerPage || 1)
     );
     stopAutoplay();
-  }, [data.length, itemsPerPage, isSliderDisabled]);
+  }, [data.length, itemsPerPage, isSliderDisabled, stopAutoplay]);
 
   // Autoplay 시작
   const startAutoplay = useCallback(() => {
