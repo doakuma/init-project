@@ -406,4 +406,32 @@ export const componentProps = {
       explain: "토글 버튼 단일 선택 여부",
     },
   ],
+  customcarousel: [
+    {
+      name: "data",
+      type: "Array",
+      default: "undefined",
+      explain: "Carousel에서 렌더링할 데이터 배열입니다.",
+    },
+    {
+      name: "renderSlideItem",
+      type: "function(item, index)",
+      default: "undefined",
+      explain:
+        "각 슬라이드 항목을 커스터마이즈하여 렌더링할 함수입니다. (옵션)",
+    },
+    {
+      name: "itemsPerPage",
+      type: "number",
+      default: "undefined",
+      explain: "한 페이지에 표시할 슬라이드 항목의 수입니다.",
+    },
+    {
+      name: "autoplayInterval",
+      type: "number",
+      default: "3000",
+      explain:
+        "자동 재생 시 다음 슬라이드로 넘어가기까지의 시간 간격(밀리초)입니다.",
+    },
+  ],
 };

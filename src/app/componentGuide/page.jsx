@@ -73,8 +73,16 @@ export default function Home() {
           {!isUndefined(componentInfo[compType]) && (
             <div className="da-components-example">
               {componentInfo[compType].map((item, idx) => {
+                const gridCount =
+                  componentInfo[compType] > 3
+                    ? 4
+                    : componentInfo[compType].length;
                 return (
-                  <div className="da-components-item" key={idx}>
+                  <div
+                    className="da-components-item"
+                    style={{ "--gridCount": gridCount }}
+                    key={idx}
+                  >
                     {item.map((component, idx2) => {
                       return (
                         <div

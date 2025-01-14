@@ -143,7 +143,7 @@ export const componentList = [
       },
       {
         label: "CustomCarousel",
-        isDone: false,
+        isDone: true,
         type: "customslider",
         summary: "이미지나 콘텐츠를 회전하여 보여주는 Carousel.",
       },
