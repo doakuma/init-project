@@ -12,7 +12,9 @@ const CustomLayout = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useTheme();
   const pathname = usePathname();
-  const { label } = menuinfo.find((menu) => menu.path === pathname);
+  const menuItem = menuinfo?.find((menu) => menu.path === pathname);
+  const label = menuItem?.label;
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth={false} disableGutters className="da-wrapper">
