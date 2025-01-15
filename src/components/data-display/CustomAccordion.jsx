@@ -1,34 +1,37 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+} from "@mui/material";
+import styled from "@emotion/styled";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const CustomAccordion = (props) => {
-  const { data = dummyData, handle } = props;
+  const { data, handle } = props;
   return (
-    <Accordion>
+    <AccordionWrapper>
       {data.map((item, idx) => {
+        const { title, content, defaultExpand, disabled } = item;
         return (
-          <>
-            <AccordionSummary>{title}</AccordionSummary>
+          <Accordion
+            key={idx}
+            defaultExpanded={defaultExpand}
+            disabled={disabled}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              {title}
+            </AccordionSummary>
             <AccordionDetails>{content}</AccordionDetails>
-          </>
+          </Accordion>
         );
       })}
-    </Accordion>
+    </AccordionWrapper>
   );
 };
 
-const dummyData = [
-  {
-    title: "Accordion 1",
-    content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur excepturi non, temporibus dicta velit, distinctio sit error sunt voluptates beatae quam quaerat impedit obcaecati voluptatibus voluptas nulla libero, quas officiis.",
-  },
-  {
-    title: "Accordion 2",
-    content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur excepturi non, temporibus dicta velit, distinctio sit error sunt voluptates beatae quam quaerat impedit obcaecati voluptatibus voluptas nulla libero, quas officiis.",
-  },
-];
-
 export default CustomAccordion;
+
+const AccordionWrapper = styled(Box)(() => {});

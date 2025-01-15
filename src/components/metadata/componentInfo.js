@@ -1169,17 +1169,53 @@ export const componentInfo = {
       },
     ],
   ],
-  customAccordion: [
-    {
-      title: "Accordion 1",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur excepturi non, temporibus dicta velit, distinctio sit error sunt voluptates beatae quam quaerat impedit obcaecati voluptatibus voluptas nulla libero, quas officiis.",
-    },
-    {
-      title: "Accordion 2",
-      content:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur excepturi non, temporibus dicta velit, distinctio sit error sunt voluptates beatae quam quaerat impedit obcaecati voluptatibus voluptas nulla libero, quas officiis.",
-    },
+  customaccordion: [
+    [
+      {
+        data: [
+          {
+            title: "Accordion 1",
+            content: "Lorem",
+            defaultExpand: true,
+            disabled: false,
+          },
+          {
+            title: "Accordion 2",
+            content: "Lorem",
+            defaultExpand: false,
+            disabled: false,
+          },
+          {
+            title: "Accordion 3",
+            content: "Lorem",
+            defaultExpand: false,
+            disabled: true,
+          },
+        ],
+      },
+      {
+        data: [
+          {
+            title: "Accordion 1",
+            content: "Lorem",
+            defaultExpand: true,
+            disabled: false,
+          },
+          {
+            title: "Accordion 2",
+            content: "Lorem",
+            defaultExpand: false,
+            disabled: false,
+          },
+          {
+            title: "Accordion 3",
+            content: "Lorem",
+            defaultExpand: false,
+            disabled: true,
+          },
+        ],
+      },
+    ],
   ],
   customslider: [
     [
