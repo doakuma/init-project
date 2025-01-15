@@ -18,6 +18,7 @@ import {
   CustomScheduler,
   CustomToggleButton,
   CustomCarousel,
+  CustomButtonGroup,
 } from "@/components";
 import { useModal } from "./modalUtils";
 import { useSearch } from "@/utils/common";
@@ -61,6 +62,8 @@ export const ComponentRender = (item, type) => {
       return <ToggleRenderer {...item} />;
     case "customcarousel":
       return <CarouselRender {...item} />;
+    case "custombuttongroup":
+      return <CustomButtonGroup {...item} />;
     default:
       return null;
   }

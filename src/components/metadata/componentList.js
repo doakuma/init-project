@@ -41,7 +41,7 @@ export const componentList = [
       },
       {
         label: "CustomButtonGroup",
-        isDone: false,
+        isDone: true,
         type: "custombuttongroup",
         summary: "",
       },

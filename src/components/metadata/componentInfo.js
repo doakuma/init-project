@@ -1327,4 +1327,253 @@ export const componentInfo = {
       },
     ],
   ],
+  custombuttongroup: [
+    [
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "md",
+        variant: "contained",
+        contents: [
+          {
+            label: "one",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "two",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "three",
+            variant: "contained",
+            size: "md",
+          },
+        ],
+      },
+      {
+        color: "secondary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "md",
+        variant: "contained",
+        contents: [
+          {
+            label: "one",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "two",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "three",
+            variant: "contained",
+            size: "md",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "md",
+        variant: "outlined",
+        contents: [
+          {
+            label: "one",
+            size: "md",
+          },
+          {
+            label: "two",
+            size: "md",
+          },
+          {
+            label: "three",
+            size: "md",
+          },
+        ],
+      },
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "md",
+        variant: "text",
+        contents: [
+          {
+            label: "one",
+            size: "md",
+          },
+          {
+            label: "two",
+            size: "md",
+          },
+          {
+            label: "three",
+            size: "md",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "small",
+        variant: "outlined",
+        contents: [
+          {
+            label: "one",
+          },
+          {
+            label: "two",
+          },
+          {
+            label: "three",
+          },
+        ],
+      },
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "medium",
+        variant: "outlined",
+        contents: [
+          {
+            label: "one",
+          },
+          {
+            label: "two",
+          },
+          {
+            label: "three",
+          },
+        ],
+      },
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "horizontal",
+        size: "large",
+        variant: "outlined",
+        contents: [
+          {
+            label: "one",
+          },
+          {
+            label: "two",
+          },
+          {
+            label: "three",
+          },
+        ],
+      },
+    ],
+    [
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "vertical",
+        size: "md",
+        variant: "contained",
+        contents: [
+          {
+            label: "one",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "two",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "three",
+            variant: "contained",
+            size: "md",
+          },
+        ],
+      },
+      {
+        color: "secondary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "vertical",
+        size: "md",
+        variant: "contained",
+        contents: [
+          {
+            label: "one",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "two",
+            variant: "contained",
+            size: "md",
+          },
+          {
+            label: "three",
+            variant: "contained",
+            size: "md",
+          },
+        ],
+      },
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "vertical",
+        size: "medium",
+        variant: "outlined",
+        contents: [
+          {
+            label: "one",
+          },
+          {
+            label: "two",
+          },
+          {
+            label: "three",
+          },
+        ],
+      },
+      {
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        orientation: "vertical",
+        size: "medium",
+        variant: "text",
+        contents: [
+          {
+            label: "one",
+          },
+          {
+            label: "two",
+          },
+          {
+            label: "three",
+          },
+        ],
+      },
+    ],
+  ],
 };

@@ -3,6 +3,7 @@ export { default as CustomButton } from "./ui-elements/CustomButton";
 export { default as CustomChip } from "./ui-elements/CustomChip";
 export { default as CustomIcon } from "./ui-elements/CustomIcon";
 export { default as CustomToggleButton } from "./ui-elements/CustomToggleButton";
+export { default as CustomButtonGroup } from "./ui-elements/CustomButtonGroup";
 
 // forms
 export { default as CustomCheckbox } from "./forms/CustomCheckbox";

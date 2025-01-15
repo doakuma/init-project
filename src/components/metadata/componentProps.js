@@ -484,4 +484,54 @@ export const componentProps = {
         "로딩 중 표시할 프로그래스 바 또는 스켈레톤의 스타일을 결정합니다.",
     },
   ],
+  custombuttongroup: [
+    {
+      name: "contents",
+      type: "Array",
+      default: "undefined",
+      explain:
+        "버튼 그룹에 포함될 버튼 데이터 배열입니다. 각 객체는 `CustomButton`의 props를 전달합니다. (필수)",
+    },
+    {
+      name: "color",
+      type: "string",
+      default: "undefined",
+      explain:
+        "버튼 그룹의 색상을 지정합니다. Material-UI의 색상 프리셋을 따릅니다.",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      default: "false",
+      explain:
+        "버튼 그룹의 비활성화 여부를 나타냅니다. `true`일 경우 모든 버튼이 비활성화됩니다.",
+    },
+    {
+      name: "fullWidth",
+      type: "boolean",
+      default: "false",
+      explain: "버튼 그룹이 전체 너비를 차지할지 여부를 지정합니다.",
+    },
+    {
+      name: "orientation",
+      type: "string",
+      default: '"horizontal"',
+      explain:
+        "버튼 그룹의 방향을 지정합니다. `horizontal` 또는 `vertical` 중 하나를 선택할 수 있습니다.",
+    },
+    {
+      name: "size",
+      type: "string",
+      default: '"medium"',
+      explain:
+        "버튼 그룹 내 버튼의 크기를 지정합니다. `small`, `medium`, `large` 중 하나를 선택할 수 있습니다.",
+    },
+    {
+      name: "variant",
+      type: "string",
+      default: '"text"',
+      explain:
+        "버튼 그룹 내 버튼의 스타일 변형을 지정합니다. `text`, `outlined`, `contained` 중 하나를 선택할 수 있습니다.",
+    },
+  ],
 };
