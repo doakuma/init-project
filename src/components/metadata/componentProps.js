@@ -434,4 +434,54 @@ export const componentProps = {
         "자동 재생 시 다음 슬라이드로 넘어가기까지의 시간 간격(밀리초)입니다.",
     },
   ],
+  customdatagrid: [
+    {
+      name: "gridCols",
+      type: "Array",
+      default: "undefined",
+      explain:
+        "DataGrid의 컬럼 설정 정보 배열입니다. 각 객체는 DataGrid 컬럼의 필드(field), 너비(width) 등을 포함합니다. (필수)",
+    },
+    {
+      name: "gridRows",
+      type: "Array",
+      default: "[]",
+      explain:
+        "DataGrid의 행 데이터 배열입니다. 각 객체는 하나의 행 데이터를 나타냅니다.",
+    },
+    {
+      name: "useCheckbox",
+      type: "boolean",
+      default: "false",
+      explain:
+        "체크박스를 사용 여부를 나타냅니다. 선택 가능 여부를 결정합니다.",
+    },
+    {
+      name: "handleChangeCheck",
+      type: "function(selectedRows)",
+      default: "undefined",
+      explain:
+        "체크박스 상태 변경 시 호출되는 콜백 함수입니다. 선택된 행의 정보를 처리합니다. (옵션)",
+    },
+    {
+      name: "selectionModal",
+      type: "Array",
+      default: "[]",
+      explain:
+        "현재 선택된 행의 데이터를 담는 배열로, 선택 상태를 외부에서 제어할 수 있습니다.",
+    },
+    {
+      name: "loading",
+      type: "boolean",
+      default: "false",
+      explain: "로딩 상태 표시 여부입니다. 데이터 로딩 중임을 나타냅니다.",
+    },
+    {
+      name: "lodadingType",
+      type: "string",
+      default: "undefined",
+      explain:
+        "로딩 중 표시할 프로그래스 바 또는 스켈레톤의 스타일을 결정합니다.",
+    },
+  ],
 };
