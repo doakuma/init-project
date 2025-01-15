@@ -1,9 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import FilterNoneIcon from "@mui/icons-material/FilterNone";
 import PropTypes from "prop-types";
 import { Typography } from "@mui/material";
 import { koKR } from "@mui/x-data-grid/locales";
+import { calculateToRem } from "@/utils/common";
+import { isUndefined } from "lodash";
+
+const calcColumnWidth = (value, ref) => {
+  const res = value / ref;
+  return Number(res.toFixed(1));
+};
+
+// Calculate column widths for a grid system
+const calculateGridWidth = (columnInfo, refItem) => {
+  if (!Array.isArray(columnInfo) || columnInfo.length === 0) {
+    throw new Error("Invalid or empty columnInfo array");
+  }
+
+  const refWidth = refItem
+    ? columnInfo.find((item) => item.field === refItem)
+    : columnInfo[0];
+
+  if (!refWidth || typeof refWidth.width === "undefined") {
+    throw new Error("Reference column not found or missing width property");
+  }
+
+  const refWidthRem = calculateToRem(refWidth.width);
+
+  return columnInfo.map((cols) => ({
+    ...cols,
+    width: calculateToRem(cols.width),
+    flex:
+      cols.field !== refItem
+        ? calcColumnWidth(calculateToRem(cols.width), refWidthRem)
+        : undefined,
+  }));
+};
 
 const CustomDatagrid = (props) => {
   const {
@@ -15,6 +48,10 @@ const CustomDatagrid = (props) => {
     loading = false,
     lodadingType,
   } = props;
+
+  const [colinfo, setColInfo] = useState(() => {
+    return calculateGridWidth(gridCols || []);
+  });
 
   // loading bar
   const renderLoading = {
@@ -33,10 +70,16 @@ const CustomDatagrid = (props) => {
       </div>
     );
   };
+  useEffect(() => {
+    const updateCols = calculateGridWidth(gridCols);
+    setColInfo(updateCols);
+  }, [gridCols]);
+
   return (
     <div className="da-datagrid-wrapper">
       <DataGrid
-        columns={gridCols}
+        {...(loading ? { slotProps: renderLoading } : {})}
+        columns={colinfo}
         rows={gridRows}
         checkboxSelection={useCheckbox}
         disableRowSelectionOnClick={!useCheckbox}

@@ -80,3 +80,8 @@ export const useSearch = (initParams, apiInfo) => {
     result,
   };
 };
+
+// calculate to rem
+export const calculateToRem = (value, elfonts = 24) => {
+  return (value / 16) * elfonts;
+};

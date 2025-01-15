@@ -149,9 +149,7 @@ const DataGridRender = (item) => {
   const handleChangeCheck = (newValue) => {
     setRowSelection(newValue);
   };
-  useEffect(() => {
-    console.debug("rowSelection", rowSelection);
-  }, [rowSelection]);
+  useEffect(() => {}, [rowSelection]);
   return (
     <CustomDatagrid
       {...item}
