@@ -120,6 +120,7 @@
     &-item {
       --gridCount: 4;
       display: grid;
+
       grid-template-columns: repeat(var(--gridCount), 1fr);
       gap: 8px;
       align-items: stretch;
@@ -129,6 +130,9 @@
       &:first-of-type {
         padding-top: 0;
         border-top: none;
+      }
+      .MuiTypography-root {
+        grid-column: 1 / calc(var(--gridCount) + 1);
       }
     }
     &-cell {

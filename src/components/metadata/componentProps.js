@@ -534,4 +534,33 @@ export const componentProps = {
         "버튼 그룹 내 버튼의 스타일 변형을 지정합니다. `text`, `outlined`, `contained` 중 하나를 선택할 수 있습니다.",
     },
   ],
+  customtooltip: [
+    {
+      name: "children",
+      type: "ReactNode",
+      default: "N/A",
+      explain:
+        "툴팁을 트리거할 콘텐츠 또는 요소입니다. 주로 사용자 상호작용(호버, 포커스 등)이 발생하는 대상입니다.",
+    },
+    {
+      name: "title",
+      type: "string | ReactNode",
+      default: "N/A",
+      explain: "툴팁에 표시할 텍스트 또는 React 요소입니다.",
+    },
+    {
+      name: "placement",
+      type: "string",
+      default: '"bottom"',
+      explain:
+        '툴팁이 children 요소에 대해 표시되는 위치를 설정합니다. "top", "bottom", "left", "right" 등을 사용할 수 있습니다.',
+    },
+    {
+      name: "arrow",
+      type: "boolean",
+      default: "false",
+      explain:
+        "툴팁에 화살표를 표시할지 여부를 결정합니다. true로 설정하면 화살표가 나타납니다.",
+    },
+  ],
 };

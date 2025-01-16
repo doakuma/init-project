@@ -1576,4 +1576,46 @@ export const componentInfo = {
       },
     ],
   ],
+  customtooltip: [
+    {
+      title: "Tooltip Arrow",
+      description: "툴팁 화살표 사용 여부",
+      contents: [
+        {
+          title: "Having arrow",
+          arrow: true,
+          children: "Having arrow",
+        },
+        {
+          title: "Not having arrow",
+          arrow: false,
+          children: "Not having arrow",
+        },
+      ],
+    },
+    {
+      title: "Tooltip placement",
+      description: "툴팁 방향",
+      contents: [
+        {
+          title: "Placement top",
+          arrow: true,
+          children: "Placement top",
+          placement: "top",
+        },
+        {
+          title: "Placement left",
+          arrow: true,
+          children: "Placement left",
+          placement: "left",
+        },
+        {
+          title: "Placement right",
+          arrow: true,
+          children: "Placement right",
+          placement: "right",
+        },
+      ],
+    },
+  ],
 };

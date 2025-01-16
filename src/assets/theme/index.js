@@ -2,6 +2,7 @@ import { useRecoilState } from "recoil";
 import { createTheme } from "@mui/material";
 import { lightThemes, darkThemes } from "./palette";
 import { settingsState } from "@/store/themeStore";
+import "../style/variable.scss";
 
 const themePalette = (mode) => {
   if (mode === "dark") {

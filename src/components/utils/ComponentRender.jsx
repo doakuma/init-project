@@ -19,6 +19,7 @@ import {
   CustomToggleButton,
   CustomCarousel,
   CustomButtonGroup,
+  CustomTooltip,
 } from "@/components";
 import { useModal } from "./modalUtils";
 import { useSearch } from "@/utils/common";
@@ -64,12 +65,18 @@ export const ComponentRender = (item, type) => {
       return <CarouselRender {...item} />;
     case "custombuttongroup":
       return <CustomButtonGroup {...item} />;
+    case "customtooltip":
+      return <TooltipRender {...item} />;
     default:
       return null;
   }
 };
 
-export const CarouselRender = (data) => {
+const TooltipRender = (data) => {
+  return <CustomTooltip {...data} />;
+};
+
+const CarouselRender = (data) => {
   const renderItem = (item) => {
     return (
       <Card>
@@ -189,9 +196,6 @@ const DatePickerRender = (item) => {
         {...item}
         handleChange={(e) => handleChange(e, "customdatepicker", "search01")}
       />
-      <div className="da-components-source">
-        <pre>{JSON.stringify(searchParams, null, 2)}</pre>
-      </div>
     </>
   );
 };

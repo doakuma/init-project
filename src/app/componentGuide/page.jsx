@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Divider, Typography } from "@mui/material";
 import StarBorder from "@mui/icons-material/StarBorder";
-import { isEmpty, isUndefined } from "lodash";
+import { isArray, isEmpty, isObject, isUndefined } from "lodash";
 import {
   componentInfo,
   componentList,
@@ -20,8 +20,11 @@ import {
   ComponentInfoRender,
   ComponentPropsRender,
 } from "@/components/utils/ComponentRender";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [compType, setCompType] = useState("");
   const handleClickList = (type) => {
     setCompType(type.toLowerCase());
@@ -73,41 +76,69 @@ export default function Home() {
           {!isUndefined(componentInfo[compType]) && (
             <div className="da-components-example">
               {componentInfo[compType].map((item, idx) => {
-                const gridCount = item > 3 ? 4 : item.length;
-                return (
-                  <div
-                    className="da-components-item"
-                    style={{ "--gridCount": gridCount }}
-                    key={idx}
-                  >
-                    {item.map((component, idx2) => {
-                      return (
-                        <div
-                          className={`da-components-cell ${
-                            isFull ? "da-components-full" : ""
-                          }`}
-                          key={idx2}
-                        >
-                          <div className="da-components-render">
-                            {ComponentRender(component, compType)}
+                // TODO : componentInfo 구조 변경 시 구현 함수
+                if (!isArray(item)) {
+                  const { title, description, contents } = item;
+                  const gridCount = contents.length > 3 ? 4 : contents.length;
+                  return (
+                    <div
+                      className="da-components-item"
+                      style={{ "--gridCount": gridCount }}
+                      key={idx}
+                    >
+                      {title && <Typography variant="h6">{title}</Typography>}
+                      {description && (
+                        <Typography variant="p">{description}</Typography>
+                      )}
+                      {contents.map((item2, idx2) => {
+                        return (
+                          <div
+                            className={`da-components-cell ${
+                              isFull ? "da-components-full" : ""
+                            }`}
+                            key={idx}
+                          >
+                            <div className="da-components-render" key={idx2}>
+                              {ComponentRender(item2, compType)}
+                            </div>
+                            {ComponentInfoRender(item2, compType)}
                           </div>
-                          {ComponentInfoRender(component, compType)}
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
+                        );
+                      })}
+                    </div>
+                  );
+                } else {
+                  // TODO : componentInfo 구조 변경 완료 후 삭제 예정
+                  const gridCount = item > 3 ? 4 : item.length;
+                  return (
+                    <div
+                      className="da-components-item"
+                      style={{ "--gridCount": gridCount }}
+                      key={idx}
+                    >
+                      {item.map((component, idx2) => {
+                        return (
+                          <div
+                            className={`da-components-cell ${
+                              isFull ? "da-components-full" : ""
+                            }`}
+                            key={idx2}
+                          >
+                            <div className="da-components-render">
+                              {ComponentRender(component, compType)}
+                            </div>
+
+                            {ComponentInfoRender(component, compType)}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                }
               })}
             </div>
           )}
           <div className="da-components-props">
-            {/* {!isEmpty(compType) && (
-              <>
-                <Typography variant="h5">Props</Typography>
-                {ComponentPropsRender(componentProps[compType])}
-                )}
-              </>
-            )} */}
             {!isEmpty(compType) && (
               <>
                 <Typography variant="h5">Props</Typography>
